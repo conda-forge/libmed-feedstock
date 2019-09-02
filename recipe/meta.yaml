@@ -1,22 +1,20 @@
 {% set name = "libmed" %}
-{% set version = "3.3.1" %}
-{% set sha256 = "dd631ef813838bc7413ff0dd6461d7a0d725bcfababdf772ece67610a8d22588" %}
+{% set version = "4.0.0" %}
 
 
 package:
-    name: libmed
-    version: 3.3.1
+    name: {{ name|lower }}
+    version: {{ version }}
 
 source:
     fn: {{ name }} {{ version }}.tar.gz
     url: http://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
-    sha256: {{ sha256  }}
-
+    sha256: a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004
     patches:
         - swig.patch
 
 build:
-    number: 1002
+    number: 0
     skip: true  # [py<35]
 
 requirements:
@@ -27,12 +25,12 @@ requirements:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:
-        - hdf5 =1.8
+        - hdf5
         - zlib
         - python
         - swig
     run:
-        - hdf5 =1.8
+        - hdf5
         - zlib
         - python
 
