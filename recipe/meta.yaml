@@ -27,12 +27,12 @@ requirements:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:
-        - hdf5
+        - hdf5 =1.8
         - zlib
         - python
         - swig
     run:
-        - hdf5
+        - hdf5 =1.8
         - zlib
         - python
 
