@@ -27,12 +27,12 @@ requirements:
     host:
         - hdf5 1.10.3|1.10.4
         - zlib
-        - python
+        - "python>=3.0"
         - swig
     run:
         - hdf5 1.10.3|1.10.4
         - zlib
-        - python
+        - "python>=3.0"
 
 
 test:
