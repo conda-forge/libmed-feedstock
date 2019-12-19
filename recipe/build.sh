@@ -10,3 +10,4 @@ cmake -G "Ninja"  \
       ..
 
 ninja install
+ninja test

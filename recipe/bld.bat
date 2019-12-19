@@ -15,6 +15,8 @@ cmake -G "Ninja" ^
 if errorlevel 1 exit 1
 ninja install
 if errorlevel 1 exit 1
+ninja test
+if errorlevel 1 exit 1
 
 move %LIBRARY_PREFIX%\lib\medC.dll %LIBRARY_PREFIX%\bin
 move %LIBRARY_PREFIX%\lib\medimport.dll %LIBRARY_PREFIX%\bin

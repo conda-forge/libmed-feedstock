@@ -1,23 +1,21 @@
 {% set name = "libmed" %}
-{% set version = "3.3.1" %}
-{% set sha256 = "dd631ef813838bc7413ff0dd6461d7a0d725bcfababdf772ece67610a8d22588" %}
+{% set version = "4.0.0" %}
+{% set sha256 = "a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004" %}
 
 
 package:
     name: libmed
-    version: 3.3.1
+    version: 4.0.0
 
 source:
     fn: {{ name }} {{ version }}.tar.gz
-    url: http://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
+    url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
     sha256: {{ sha256  }}
-
-    patches:
-        - swig.patch
+    #git_url: https://salsa.debian.org/science-team/med-fichier
+    #git_rev: 8a0b0d21d4bac79772797b0a800cf4d5bf77bc32    
 
 build:
-    number: 1001
-    skip: true  # [py<35]
+    number: 0
 
 requirements:
     build:
@@ -27,12 +25,12 @@ requirements:
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
     host:
-        - hdf5 1.8*
+        - hdf5 1.10.3|1.10.4
         - zlib
         - python
         - swig
     run:
-        - hdf5
+        - hdf5 1.10.3|1.10.4
         - zlib
         - python
 
@@ -42,15 +40,17 @@ test:
         - med
 
 about:
-    home: http://www.salome-platform.org/
+    home: https://www.salome-platform.org/user-section/about/med
     license: LGPLv3.0
     license_family: LGPL
     license_file: COPYING
-    summary: geometry mesh formats
-    description: import / export of med-files (please give us more information)
+    summary: 'MED : interoperable format for data interchange between mesh based solvers.'
+    description: |
+        The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.
     doc_url: http://www.salome-platform.org/
     dev_url: http://www.salome-platform.org/
 
 extra:
     recipe-maintainers:
         - looooo
+        - Luca DallOlio <ld@aego.ai>
