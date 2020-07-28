@@ -1,57 +1,57 @@
 {% set name = "libmed" %}
-{% set version = "4.0.0" %}
-{% set sha256 = "a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004" %}
+{% set version = "4.1.0" %}
+{% set sha256 = "847db5d6fbc9ce6924cb4aea86362812c9a5ef6b9684377e4dd6879627651fce" %}
 
 
 package:
-    name: libmed
-    version: 4.0.0
+  name: libmed
+  version: 4.0.0
 
 source:
-    fn: {{ name }} {{ version }}.tar.gz
-    url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
-    sha256: {{ sha256  }}
+  fn: {{ name }} {{ version }}.tar.gz
+  url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
     #git_url: https://salsa.debian.org/science-team/med-fichier
     #git_rev: 8a0b0d21d4bac79772797b0a800cf4d5bf77bc32    
 
 build:
-    number: 1
-    skip: True  # [py2k or osx or win]
+  number: 0
+  skip: true  # [py2k or osx or win]
 
 requirements:
-    build:
-        - ninja
-        - cmake
-        - {{ compiler('fortran') }}
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-    host:
-        - hdf5 1.10.3|1.10.4
-        - zlib
-        - python
-        - swig
-    run:
-        - hdf5 1.10.3|1.10.4
-        - zlib
-        - python
+  build:
+    - ninja
+    - cmake
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
+    - hdf5 1.10.3|1.10.4
+    - zlib
+    - python
+    - swig
+  run:
+    - hdf5 1.10.3|1.10.4
+    - zlib
+    - python
 
 
 test:
-    imports:
-        - med
+  imports:
+    - med
 
 about:
-    home: https://www.salome-platform.org/user-section/about/med
-    license: LGPLv3.0
-    license_family: LGPL
-    license_file: COPYING
-    summary: 'MED : interoperable format for data interchange between mesh based solvers.'
-    description: |
-        The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.
-    doc_url: http://www.salome-platform.org/
-    dev_url: http://www.salome-platform.org/
+  home: https://www.salome-platform.org/user-section/about/med
+  license: LGPLv3.0
+  license_family: LGPL
+  license_file: COPYING
+  summary: 'MED : interoperable format for data interchange between mesh based solvers.'
+  description: |
+    The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.
+  doc_url: http://www.salome-platform.org/
+  dev_url: http://www.salome-platform.org/
 
 extra:
-    recipe-maintainers:
-        - looooo
-        - ldallolio-irt
+  recipe-maintainers:
+    - looooo
+    - ldallolio-irt
