@@ -15,7 +15,7 @@ source:
     #git_rev: 8a0b0d21d4bac79772797b0a800cf4d5bf77bc32    
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k or osx or win]
 
 requirements:
