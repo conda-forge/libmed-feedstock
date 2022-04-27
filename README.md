@@ -48,10 +48,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_64_hdf51.10.3python3.8.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.3python3.8.____73_pypy" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_64_hdf51.10.3python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.3python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_hdf51.10.3python3.9.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.3python3.9.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -76,10 +90,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_64_hdf51.10.5python3.8.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.5python3.8.____73_pypy" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_64_hdf51.10.5python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.5python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_hdf51.10.5python3.9.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.5python3.9.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -104,10 +132,24 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>linux_64_hdf51.10.6python3.8.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6python3.8.____73_pypy" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>linux_64_hdf51.10.6python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_hdf51.10.6python3.9.____73_pypy</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=553&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libmed-feedstock?branchName=main&jobName=linux&configuration=linux_64_hdf51.10.6python3.9.____73_pypy" alt="variant">
                 </a>
               </td>
             </tr><tr>
