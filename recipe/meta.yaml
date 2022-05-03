@@ -13,7 +13,7 @@ source:
   sha256: dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0  
 
 build:
-  number: 4
+  number: 5
   skip: true  # [py2k or osx or win]
 
 requirements:
