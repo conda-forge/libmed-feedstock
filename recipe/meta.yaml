@@ -10,7 +10,7 @@ package:
 source:
   fn: {{ name }}_{{ version }}.tar.gz
   url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
-  sha256: dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0  
+#  sha256: dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0  
 
 build:
   number: 5
