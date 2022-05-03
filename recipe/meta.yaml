@@ -1,6 +1,5 @@
 {% set name = "libmed" %}
 {% set version = "4.0.0" %}
-#{% set sha256 = "" %}
 
 
 package:
@@ -10,10 +9,10 @@ package:
 source:
   fn: {{ name }}_{{ version }}.tar.gz
   url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
-#  sha256: dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0  
+  sha256: a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004  
 
 build:
-  number: 5
+  number: 6
   skip: true  # [py2k or osx or win]
 
 requirements:
@@ -27,9 +26,9 @@ requirements:
       - {{ compiler('cxx') }}
       - swig
   host:
-      - hdf5
+      - hdf5 {{ hdf5 }}
   run:
-      - hdf5
+      - hdf5 {{ hdf5 }}
 
 #test:
 #  imports:
