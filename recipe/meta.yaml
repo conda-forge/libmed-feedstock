@@ -1,7 +1,6 @@
 {% set name = "libmed" %}
 {% set version = "4.0.0" %}
-{% set sha256 = "a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004" %}
-#{% set sha256 = "dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0" %}
+#{% set sha256 = "" %}
 
 
 package:
@@ -11,9 +10,7 @@ package:
 source:
   fn: {{ name }}_{{ version }}.tar.gz
   url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
-  #sha256: {{ sha256 }}
-    #git_url: https://salsa.debian.org/science-team/med-fichier
-    #git_rev: 8a0b0d21d4bac79772797b0a800cf4d5bf77bc32    
+  sha256: dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0  
 
 build:
   number: 3
@@ -30,14 +27,9 @@ requirements:
       - {{ compiler('cxx') }}
       - swig
   host:
-      - hdf5 {{ hdf5 }}
-#      - zlib
-      - python {{ python }}
+      - hdf5
   run:
-    - {{ pin_compatible('hdf5', min_pin='x.x', max_pin='x.x') }}
-    - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
-#    - zlib
-#    - python 3.8
+      - hdf5
 
 test:
   imports:
