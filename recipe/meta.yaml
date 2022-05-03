@@ -20,9 +20,9 @@ build:
 
 requirements:
   build:
-      - ninja # [win]
-      - cmake # [win]
-      - autoconf # [linux]
+      - ninja  # [win]
+      - cmake  # [win]
+      - autoconf  # [linux]
       - make # [linux]
       - {{ compiler('fortran') }}
       - {{ compiler('c') }}
