@@ -23,7 +23,7 @@ requirements:
       - ninja  # [win]
       - cmake  # [win]
       - autoconf  # [linux]
-      - make # [linux]
+      - make  # [linux]
       - {{ compiler('fortran') }}
       - {{ compiler('c') }}
       - {{ compiler('cxx') }}
