@@ -22,6 +22,8 @@ requirements:
   build:
       - ninja # [win]
       - cmake # [win]
+      - autoconf # [linux]
+      - make # [linux]
       - {{ compiler('fortran') }}
       - {{ compiler('c') }}
       - {{ compiler('cxx') }}
@@ -32,6 +34,7 @@ requirements:
       - python {{ python }}
   run:
     - {{ pin_compatible('hdf5', min_pin='x.x', max_pin='x.x') }}
+    - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
 #    - zlib
 #    - python 3.8
 
@@ -41,7 +44,7 @@ test:
 
 about:
   home: https://www.salome-platform.org/user-section/about/med
-  license: LGPLv3.0
+  license: LGPL-3.0-only
   license_family: LGPL
   license_file: LICENSE.txt
   summary: 'MED : interoperable format for data interchange between mesh based solvers.'
