@@ -27,14 +27,9 @@ requirements:
       - {{ compiler('cxx') }}
       - swig
   host:
-      - hdf5 {{ hdf5 }}
-#      - zlib
-      - python {{ python }}
+      - hdf5
   run:
-    - {{ pin_compatible('hdf5', min_pin='x.x', max_pin='x.x') }}
-    - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
-#    - zlib
-#    - python 3.8
+      - hdf5
 
 test:
   imports:
