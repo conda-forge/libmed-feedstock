@@ -1,5 +1,5 @@
 {% set name = "libmed" %}
-{% set version = "4.0.0" %}
+{% set version = "4.1.1" %}
 
 
 package:
@@ -9,28 +9,28 @@ package:
 source:
   fn: {{ name }}_{{ version }}.tar.gz
   url: https://files.salome-platform.org/Salome/other/med-{{ version }}.tar.gz
-  sha256: a474e90b5882ce69c5e9f66f6359c53b8b73eb448c5f631fa96e8cd2c14df004  
+  sha256: dc2b5d54ebf0666e3ff2e974041d2ab0da906061323537023ab165d573389dd0
 
 build:
-  number: 6
+  number: 0
   skip: true  # [py2k or osx or win]
 
 requirements:
   build:
-      - ninja  # [win]
-      - cmake  # [win]
-      - autoconf  # [linux]
-      - make  # [linux]
-      - {{ compiler('fortran') }}
-      - {{ compiler('c') }}
-      - {{ compiler('cxx') }}
-      - swig
+    - ninja    # [win]
+    - cmake    # [win]
+    - autoconf    # [linux]
+    - make    # [linux]
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+    - swig
   host:
-      - hdf5 {{ hdf5 }}
-      - python {{ python }}
+    - hdf5 {{ hdf5 }}
+    - python {{ python }}
   run:
-      - hdf5 {{ hdf5 }}
-      - python {{ python }}
+    - hdf5 {{ hdf5 }}
+    - python {{ python }}
 
 test:
   imports:
