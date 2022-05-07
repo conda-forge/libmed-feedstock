@@ -27,12 +27,14 @@ requirements:
       - swig
   host:
       - hdf5 {{ hdf5 }}
+      - python {{ python }}
   run:
       - hdf5 {{ hdf5 }}
+      - python {{ python }}      
 
-#test:
-#  imports:
-#    - med
+test:
+  imports:
+    - med
 
 about:
   home: https://www.salome-platform.org/user-section/about/med
