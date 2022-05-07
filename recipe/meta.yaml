@@ -30,7 +30,7 @@ requirements:
       - python {{ python }}
   run:
       - hdf5 {{ hdf5 }}
-      - python {{ python }}      
+      - python {{ python }}
 
 test:
   imports:
