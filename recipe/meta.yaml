@@ -1,6 +1,6 @@
 {% set name = "libmed" %}
 {% set version = "4.1.1" %}
-{% set sha256 = "a082b705d1aafe95d3a231d12c57f0b71df554c253e190acca8d26fc775fb1e6" %}
+{% set sha256 = "fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0" %}
 
 
 package:
@@ -9,16 +9,17 @@ package:
 
 source:
   fn: {{ name }}_{{ version }}.tar.gz
-  url: https://files.salome-platform.org/Salome/medfile/med-{{ version }}.tar.gz
+ # url: https://files.salome-platform.org/Salome/medfile/med-{{ version }}.tar.gz # blacklisting conda forge
+  url: https://github.com/Krande/med-copy/archive/refs/tags/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - patches/med-4.1.1-check-hdf5-parallel.diff  # [unix]
 
 build:
-  number: 4
+  number: 5
 #  string: aster_py{{ CONDA_PY }}_{{mpi}}_np{{CONDA_NPY}}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }} # [mpi != "nompi"]
 #  string: aster_py{{ CONDA_PY }}_seq_np{{CONDA_NPY}}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}     # [mpi == "nompi"]  
-  skip: true  # [py2k or osx or win or py>=312]
+  skip: true  # [py2k or osx or py>=312 or win]
   script_env:
     - PKG_DEBUG={{ environ.get('PKG_DEBUG', 'False') }}
 
@@ -38,8 +39,6 @@ requirements:
     - cmake >=3.8                         # [win]
     - hdf5 >=1.10.2,<1.11
     - python {{ python }}
-    - astor
-    - pybind11-stubgen
     - zlib
 #    - {{ mpi }}                 # [mpi != "nompi"]        
   run:
