@@ -19,7 +19,7 @@ build:
   number: 5
 #  string: aster_py{{ CONDA_PY }}_{{mpi}}_np{{CONDA_NPY}}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }} # [mpi != "nompi"]
 #  string: aster_py{{ CONDA_PY }}_seq_np{{CONDA_NPY}}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}     # [mpi == "nompi"]  
-  skip: true  # [py2k or osx or py>=312]
+  skip: true  # [py2k or osx or py>=312 or win]
   script_env:
     - PKG_DEBUG={{ environ.get('PKG_DEBUG', 'False') }}
 
