@@ -1,0 +1,24 @@
+diff --git a/configure b/configure
+index c3980d6..379a6a0 100755
+--- a/configure
++++ b/configure
+@@ -8181,16 +8181,10 @@ printf "%s\n" "#define ABSOLUTE_H5PUBLIC_H \"$gl_cv_absolute_H5public_h\"" >>con
+       HDF5_VERSION="0"
+       if test -n "$HDF5_ABS_PATH" ; then
+          HDF5_USED_VER=` grep H5_VERS_INFO $HDF5_ABS_PATH | sed  's/\([^"]*\)\(".*"\)\([^"]*\)/\2/g' `
+-         H5_VER_MAJOR=`  grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MAJOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
+-         H5_VER_MINOR=`  grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
+-         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE[[ \t]]*\([0-9]*\)[[ \t]]*.*$/\1/g' `
++         H5_VER_MAJOR=`grep '#define *H5_VERS_MAJOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MAJOR[ \t]*//g'`
++         H5_VER_MINOR=`grep '#define *H5_VERS_MINOR' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_MINOR[ \t]*//g'`
++         H5_VER_RELEASE=`grep '#define *H5_VERS_RELEASE' $HDF5_ABS_PATH | sed  's/^.*H5_VERS_RELEASE[ \t]*//g'`
+          HDF5_VERSION=`  expr 10000 \* ${H5_VER_MAJOR} + 100 \* ${H5_VER_MINOR} + ${H5_VER_RELEASE} `
+-         test "0${HDF5_VERSION}" -gt "11100" || test "0${HDF5_VERSION}" -lt "11002" && as_fn_error $? "
+-This HDF5 version ${H5_VER_MAJOR}.${H5_VER_MINOR}.${H5_VER_RELEASE} must not be used with med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE}.
+-The HDF5 library version used by med-fichier${MED_NUM_MAJEUR}.y.z MUST NOT be > 1.10 and have to be at least HDF${HDF_VERSION_REF}.
+-DO NOT TRY TO COMPILE med-fichier${MED_NUM_MAJEUR}.${MED_NUM_MINEUR}.${MED_NUM_RELEASE} version with an HDF5 library which would generate an hdf5 file not compliant with HDF5-${HDF_VERSION_MAJOR_REF}.${HDF_VERSION_MINOR_REF}.z library.
+-This would BREAK med-fichier compatibility between files with the same revision number !
+-      " "$LINENO" 5
+      else
+ ## In case user explicitly ask to not use hdf5 !
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: Can't compile MED without hdf5" >&5

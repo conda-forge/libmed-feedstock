@@ -1,0 +1,17 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9eceab7..253d357 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -7,12 +7,7 @@ PROJECT(MEDFile C CXX)
+ #ENABLE_LANGUAGE(Fortran OPTIONAL)
+ 
+ INCLUDE(CheckLanguage)
+-CHECK_LANGUAGE(Fortran)
+-IF(CMAKE_Fortran_COMPILER)
+-  ENABLE_LANGUAGE(Fortran)
+-ELSE()
+   MESSAGE(STATUS "No Fortran support")
+-ENDIF()
+ 
+ ## Version number 
+ SET(MED_NUM_MAJEUR  4)

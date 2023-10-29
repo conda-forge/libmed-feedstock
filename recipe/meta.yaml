@@ -8,57 +8,59 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}_{{ version }}.tar.gz
  # url: https://files.salome-platform.org/Salome/medfile/med-{{ version }}.tar.gz # blacklisting conda forge
   url: https://github.com/Krande/med-copy/archive/refs/tags/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - patches/med-4.1.1-check-hdf5-parallel.diff  # [unix]
+    # Part of this patch is required to add a few system definitions which
+    # should indicate that they are using the 1.10 API not the 1.6 API
+    # https://github.com/HDFGroup/hdf5/issues/3797
+    - patches/ignore-hdf5-bounds-check-cmake.patch
+    - patches/ignore-hdf5-bounds-check-source.patch
+    - patches/disable-fortran.patch  # [win]
+    - patches/do_not_modify_windows_path.patch
+    - patches/install-in-runtime-and_archive.patch
+    # without this patch, OSX finds the system python since it is a newer version
+    - patches/cmake-modern-python.patch
+    - patches/do-not-make-symlinks-on-windows.patch
 
 build:
-  number: 5
-#  string: aster_py{{ CONDA_PY }}_{{mpi}}_np{{CONDA_NPY}}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }} # [mpi != "nompi"]
-#  string: aster_py{{ CONDA_PY }}_seq_np{{CONDA_NPY}}h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}     # [mpi == "nompi"]  
-  skip: true  # [py2k or osx or py>=312 or win]
-  script_env:
-    - PKG_DEBUG={{ environ.get('PKG_DEBUG', 'False') }}
+  number: 0
+  # string: aster_py{{ CONDA_PY }}_mpi_{{ mpi }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [mpi != "nompi"]
+  # string: aster_py{{ CONDA_PY }}_nompi_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}      # [mpi == "nompi"]
 
 requirements:
   build:
-    - {{ compiler('c') }}                 # [not win]
-    - {{ compiler('cxx') }}               # [not win]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}           # [not win]
-    - m2w64-gcc                           # [win]
-    - m2w64-gcc-fortran                   # [win]
-    - sysroot_linux-64 2.17               # [unix]
     - swig >=4.0.2
-  host:
-    - autoconf                            # [unix]
+    - cmake
     - ninja                               # [win]
-    - make                                # [not win]
-    - cmake >=3.8                         # [win]
-    - hdf5 >=1.10.2,<1.11
-    - python {{ python }}
+    - make                                # [unix]
+    - python                              # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+  host:
+    - python
+    - hdf5
     - zlib
-#    - {{ mpi }}                 # [mpi != "nompi"]        
+#    - {{ mpi }}                 # [mpi != "nompi"]
   run:
-    - {{ pin_compatible('hdf5', min_pin='x.x', max_pin='x.x') }}
-    - {{ pin_compatible('python', min_pin='x.x', max_pin='x.x') }}
-    - python {{ python }}
-#    - {{ mpi }}                 # [mpi != "nompi"]    
+    - python
+#    - {{ mpi }}                 # [mpi != "nompi"]
 
 test:
   imports:
     - med
   commands:
-    - test -f $CONDA_PREFIX/lib/libmed.so  # [unix]
-    - test -n "$(nm -D $CONDA_PREFIX/lib/libmed.so | grep MEDlibraryNumVersion)  # [unix]"
+    - test -f ${PREFIX}/lib/libmed${SHLIB_EXT}                   # [unix]
+    - nm ${PREFIX}/lib/libmedC.so | grep MEDlibraryNumVersion    # [linux]
 
 about:
   home: https://www.salome-platform.org/user-section/about/med
   license: LGPL-3.0-only
   license_family: LGPL
-  license_file: LICENSE.txt
+  license_file: COPYING
   summary: 'MED : interoperable format for data interchange between mesh based solvers.'
   description: |
     The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.

@@ -1,0 +1,18 @@
+diff --git a/python/__init__.py b/python/__init__.py
+index 1aaed9a..6b5d6d5 100644
+--- a/python/__init__.py
++++ b/python/__init__.py
+@@ -43,13 +43,6 @@ import os
+ import sys
+ import platform
+ import warnings
+-if platform.system() == "Windows":
+-    # the following line will be modified by the windows installer
+-    MED_PYTHON_PATH = ""
+-    if MED_PYTHON_PATH != "":
+-        # set Path to MED module
+-        os.environ['PATH'] = MED_PYTHON_PATH + ';' + os.environ['PATH']
+-
+ 
+ # check if interactive mode
+ if not hasattr(sys, 'ps1'):
