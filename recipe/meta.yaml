@@ -9,7 +9,8 @@ package:
 
 source:
   fn: {{ name }}_{{ version }}.tar.gz
-  url: https://files.salome-platform.org/Salome/medfile/med-{{ version }}.tar.gz
+ # url: https://files.salome-platform.org/Salome/medfile/med-{{ version }}.tar.gz # blacklisting conda forge
+  url: https://github.com/Krande/med-copy/archive/refs/tags/{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
     - patches/med-4.1.1-check-hdf5-parallel.diff  # [unix]
@@ -38,8 +39,6 @@ requirements:
     - cmake >=3.8                         # [win]
     - hdf5 >=1.10.2,<1.11
     - python {{ python }}
-    - astor
-    - pybind11-stubgen
     - zlib
 #    - {{ mpi }}                 # [mpi != "nompi"]        
   run:
