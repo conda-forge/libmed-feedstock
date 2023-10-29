@@ -1,6 +1,6 @@
 {% set name = "libmed" %}
 {% set version = "4.1.1" %}
-{% set sha256 = "a082b705d1aafe95d3a231d12c57f0b71df554c253e190acca8d26fc775fb1e6" %}
+{% set sha256 = "fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0" %}
 
 
 package:
