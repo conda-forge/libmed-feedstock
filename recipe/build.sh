@@ -2,12 +2,16 @@ set -ex
 
 mkdir -p build
 pushd build
+
+# we specify both old style (all capital PYTHON)
+# and new style (Python) variables
 cmake \
   ${CMAKE_ARGS} \
   -D Python_FIND_VIRTUALENV=FIRST \
   -D Python_FIND_STRATEGY=LOCATION \
   -D Python_ROOT_DIR="${PREFIX}" \
   -D Python_EXECUTABLE="${PYTHON}" \
+  -D PYTHON_EXECUTABLE="${PYTHON}" \
   -D HDF5_ROOT_DIR=${PREFIX} \
   -D MEDFILE_INSTALL_DOC=OFF \
   -D MEDFILE_BUILD_TESTS=OFF \

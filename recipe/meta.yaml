@@ -21,7 +21,10 @@ source:
     - patches/do_not_modify_windows_path.patch
     - patches/install-in-runtime-and_archive.patch
     # without this patch, OSX finds the system python since it is a newer version
-    - patches/cmake-modern-python.patch
+    # I (hmaarrfk) am about 90% sure it is because SWIG + CMake 3.12 FindPython + OSX
+    # has some bugs... so for OSX (and linux), we just fallback to the standard
+    # build process
+    - patches/cmake-modern-python.patch  # [win]
     - patches/do-not-make-symlinks-on-windows.patch
 
 build:
