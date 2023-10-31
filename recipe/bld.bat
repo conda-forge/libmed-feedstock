@@ -2,7 +2,9 @@
 
 mkdir build
 cd build
-
+set FCFLAGS=-fdefault-integer-8 %FCFLAGS%
+set FFLAGS=-fdefault-integer-8 %FFLAGS%
+set MED_MEDINT_TYPE=int
 cmake -G "Ninja" ^
   %CMAKE_ARGS% ^
   -D Python_FIND_STRATEGY:STRING=LOCATION ^

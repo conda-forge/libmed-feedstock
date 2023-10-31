@@ -1,5 +1,7 @@
 set -ex
-
+export FCFLAGS="-fdefault-integer-8 ${FCFLAGS}"
+export FFLAGS="-fdefault-integer-8 ${FFLAGS}"
+export MED_MEDINT_TYPE=int
 mkdir -p build
 pushd build
 
