@@ -1,48 +1,29 @@
-#!/bin/bash
-export CLICOLOR_FORCE=1
-
+set -ex
 export FCFLAGS="-fdefault-integer-8 ${FCFLAGS}"
 export FFLAGS="-fdefault-integer-8 ${FFLAGS}"
-export CXXFLAGS="-std=gnu++98 ${CXXFLAGS}"
+export MED_MEDINT_TYPE=int
+mkdir -p build
+pushd build
 
-echo "PYTHON=${PYTHON}"
-echo "PY_VER=${PY_VER}"
-echo "SP_DIR=${SP_DIR}"
-echo "STDLIB_DIR=${STDLIB_DIR}"
+# we specify both old style (all capital PYTHON)
+# and new style (Python) variables
+cmake \
+  ${CMAKE_ARGS} \
+  -D Python_FIND_VIRTUALENV=FIRST \
+  -D Python_FIND_STRATEGY=LOCATION \
+  -D Python_ROOT_DIR="${PREFIX}" \
+  -D Python_EXECUTABLE="${PYTHON}" \
+  -D PYTHON_EXECUTABLE="${PYTHON}" \
+  -D HDF5_ROOT_DIR=${PREFIX} \
+  -D MEDFILE_INSTALL_DOC=OFF \
+  -D MEDFILE_BUILD_TESTS=OFF \
+  -D MEDFILE_BUILD_PYTHON=ON \
+  -D MEDFILE_BUILD_SHARED_LIBS=ON \
+  -D MEDFILE_BUILD_STATIC_LIBS=OFF \
+  -D MEDFILE_USE_UNICODE=OFF \
+  ..
 
-#if [[ "$mpi" == "nompi" ]]; then
-  export F77=${FC}
-  echo "Compiling for Sequential MPI=$mpi"
-#else
-#  echo "Compiling for MPI=$mpi"
-#  export OPAL_PREFIX=$PREFIX
-#  export CC=mpicc
-#  export CXX=mpicxx
-#  export FC=mpif90
-#  export F77=mpif77
-#  export F90=mpif90
-#fi
-
-opts=("--with-swig=yes" )
-
-if [[ "${PKG_DEBUG}" == "True" ]]; then
-    echo "Debugging Enabled"
-    # Set compiler flags for debugging, for instance
-    export CFLAGS="-g -O0 ${CFLAGS}"
-    export CXXFLAGS="-g -O0 ${CXXFLAGS}"
-    export FCFLAGS="-g -O0 ${FCFLAGS}"
-    opts+=( "--enable-mesgerr" )
-    # Additional debug build steps
-else
-    echo "Debugging Disabled"
-    # Set compiler flags for production
-    opts+=( "--disable-mesgerr" )
-    # Additional production build steps
-fi
-
-chmod +x ./configure
-./configure "${opts[@]}" --prefix="$PREFIX" --with-hdf5="$PREFIX"
-make
+make -j${CPU_COUNT}
 make install
 
-rm -rf "${PREFIX}/share/doc/med"
+popd

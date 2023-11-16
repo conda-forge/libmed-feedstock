@@ -1,0 +1,62 @@
+--- a/CMakeLists.txt	2021-10-08 07:45:35.000000000 -0400
++++ b/CMakeLists.txt	2023-10-29 20:10:24.404003959 -0400
+@@ -113,8 +113,7 @@
+ IF(MEDFILE_BUILD_PYTHON)
+   FIND_PACKAGE(SWIG REQUIRED)
+   INCLUDE(${SWIG_USE_FILE})
+-  FIND_PACKAGE(PythonLibs REQUIRED)
+-  FIND_PACKAGE(PythonInterp REQUIRED)  # to get version string ...
++  FIND_PACKAGE(Python COMPONENTS Interpreter Development REQUIRED)
+ ENDIF()
+ 
+ ## Creation of files med_config.h.cmake
+--- a/python/CMakeLists.txt	2020-01-30 11:03:53.000000000 -0500
++++ b/python/CMakeLists.txt	2023-10-30 09:46:42.996837593 -0400
+@@ -1,7 +1,7 @@
+ INCLUDE(${SWIG_USE_FILE})
+ 
+ INCLUDE_DIRECTORIES(
+-  ${PYTHON_INCLUDE_DIRS}
++  ${Python_INCLUDE_DIRS}
+   ${PROJECT_SOURCE_DIR}/include
+   ${PROJECT_BINARY_DIR}/include
+   ${HDF5_INCLUDE_DIRS}
+@@ -27,16 +27,18 @@
+   medstructelement_module.i
+ )
+ 
+-IF(APPLE)
+-  SET(PYTHON_LIBRARIES "-undefined dynamic_lookup")
+-ENDIF(APPLE)
+-
+ SET(_link_libs
+   medC
+-  ${PYTHON_LIBRARIES}
++  ${Python_LIBRARIES}
+   )
+ 
+-SET(_install_dir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages/med)
++MESSAGE("CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}")
++MESSAGE("Python_SITELIB: ${Python_SITELIB}")
++FILE(RELATIVE_PATH _install_dir "${CMAKE_INSTALL_PREFIX}" "${Python_SITELIB}")
++SET(_install_dir "${_install_dir}/med")
++MESSAGE("_install_dir: ${_install_dir}")
++FILE(TO_CMAKE_PATH "${_install_dir}" _install_dir)
++MESSAGE("Installing python package to: ${_install_dir}")
+ 
+ # Ensure we will be able to run the Python tests from the build tree by outputing
+ # files into the package folder:
+@@ -57,10 +59,12 @@
+ #EF: (OLDWAY)  SWIG_ADD_MODULE(${_module_name} python ${f})
+   SWIG_ADD_LIBRARY(${_module_name} TYPE MODULE LANGUAGE python SOURCES ${f})
+   SWIG_LINK_LIBRARIES(${_module_name} ${_link_libs})
++  IF(APPLE)
++    SWIG_LINK_LIBRARIES(${_module_name} "-undefined dynamic_lookup")
++  ENDIF(APPLE)
+ 
+   INSTALL(TARGETS ${SWIG_MODULE_${_module_name}_REAL_NAME} DESTINATION ${_install_dir})
+   INSTALL_AND_COMPILE_PYTHON_FILE("${CMAKE_CURRENT_BINARY_DIR}/med/${_module_name}.py" ${_install_dir})
+-  
+ ENDFOREACH()
+ 
+ INSTALL_AND_COMPILE_PYTHON_FILE("${CMAKE_CURRENT_SOURCE_DIR}/__init__.py" ${_install_dir})

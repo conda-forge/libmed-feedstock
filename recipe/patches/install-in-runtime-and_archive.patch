@@ -1,0 +1,74 @@
+--- a/src/CMakeLists.txt	2021-10-08 07:45:35.000000000 -0400
++++ b/src/CMakeLists.txt	2023-10-29 19:45:32.919293325 -0400
+@@ -83,7 +83,10 @@
+   TARGET_LINK_LIBRARIES(medC ${HDF5_LIBS} ${MPI_LIBS})
+   MED_SET_DEFINITIONS(medC NOGDI)
+   
+-  INSTALL(TARGETS medC EXPORT ${_export_group} DESTINATION lib${LIB_SUFFIX})  
++  INSTALL(TARGETS medC
++          EXPORT ${_export_group}
++          RUNTIME DESTINATION bin
++          ARCHIVE DESTINATION lib${LIB_SUFFIX})
+ ENDIF()
+ 
+ ######### Static Libraries ##########
+@@ -97,7 +100,10 @@
+   TARGET_LINK_LIBRARIES(medC_static ${HDF5_LIBS} ${MPI_LIBS})
+   MED_SET_DEFINITIONS(medC_static NOGDI)
+   
+-  INSTALL(TARGETS medC_static EXPORT ${_export_group} DESTINATION lib${LIB_SUFFIX})
++  INSTALL(TARGETS medC_static
++          EXPORT ${_export_group}
++          RUNTIME DESTINATION bin
++          ARCHIVE DESTINATION lib${LIB_SUFFIX})
+ ENDIF()
+ 
+ ########################### Fortran stuff ###################################
+@@ -113,7 +119,10 @@
+       SOVERSION 11
+       VERSION   11.1.1)
+     TARGET_LINK_LIBRARIES(medfwrap medC)
+-    INSTALL(TARGETS medfwrap EXPORT ${_export_group} DESTINATION lib${LIB_SUFFIX})
++    INSTALL(TARGETS medfwrap
++            EXPORT ${_export_group}
++            RUNTIME DESTINATION bin
++            ARCHIVE DESTINATION lib${LIB_SUFFIX})
+ 
+     # Add Shared MED library
+     ADD_LIBRARY(med SHARED MEDiterators.c)
+@@ -124,7 +133,10 @@
+     TARGET_LINK_LIBRARIES(med medfwrap)    
+    
+     # Install only the resulting library:
+-    INSTALL(TARGETS med EXPORT ${_export_group} DESTINATION lib${LIB_SUFFIX})
++    INSTALL(TARGETS med
++            EXPORT ${_export_group}
++            RUNTIME DESTINATION bin
++            ARCHIVE DESTINATION lib${LIB_SUFFIX})
+   ENDIF()
+ 
+   ######### Static Libraries ##########
+@@ -137,7 +149,10 @@
+     ADD_LIBRARY(medfwrap_static STATIC ${medfort_wrap_SOURCES})
+     SET_TARGET_PROPERTIES(medfwrap_static PROPERTIES OUTPUT_NAME medfwrap)
+     TARGET_LINK_LIBRARIES(medfwrap_static medC_static)
+-    INSTALL(TARGETS medfwrap_static EXPORT ${_export_group} DESTINATION lib${LIB_SUFFIX})
++    INSTALL(TARGETS medfwrap_static
++            EXPORT ${_export_group}
++            RUNTIME DESTINATION bin
++            ARCHIVE DESTINATION lib${LIB_SUFFIX})
+     
+     # Add Static MED library
+     ADD_LIBRARY(med_static STATIC MEDiterators.c)
+@@ -145,7 +160,10 @@
+     TARGET_LINK_LIBRARIES(med_static medfwrap_static)
+ 
+     # Install only the resulting library:  
+-    INSTALL(TARGETS med_static EXPORT ${_export_group} DESTINATION lib${LIB_SUFFIX})
++    INSTALL(TARGETS med_static
++            EXPORT ${_export_group}
++            RUNTIME DESTINATION bin
++            ARCHIVE DESTINATION lib${LIB_SUFFIX})
+   ENDIF()
+   
+ ENDIF(CMAKE_Fortran_COMPILER_WORKS)
