@@ -28,9 +28,9 @@ source:
     - patches/do-not-make-symlinks-on-windows.patch
 
 build:
-  number: 8
-  # string: aster_py{{ CONDA_PY }}_mpi_{{ mpi }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [mpi != "nompi"]
-  # string: aster_py{{ CONDA_PY }}_nompi_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}      # [mpi == "nompi"]
+  number: 9
+  # string: py{{ CONDA_PY }}_mpi_{{ mpi }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [mpi != "nompi"]
+  # string: py{{ CONDA_PY }}_nompi_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}      # [mpi == "nompi"]
   run_exports:
     - {{ pin_subpackage(name, 'x.x') }}
 
@@ -39,6 +39,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}           # [not win]
+    - sysroot_linux-64 2.17               # [linux64]
     - swig >=4.0.2
     - cmake
     - ninja                               # [win]
