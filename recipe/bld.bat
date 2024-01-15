@@ -4,7 +4,7 @@ mkdir build
 cd build
 set FCFLAGS=-fdefault-integer-8 %FCFLAGS%
 set FFLAGS=-fdefault-integer-8 %FFLAGS%
-set MED_MEDINT_TYPE=int
+
 cmake -G "Ninja" ^
   %CMAKE_ARGS% ^
   -D Python_FIND_STRATEGY:STRING=LOCATION ^
@@ -17,6 +17,7 @@ cmake -G "Ninja" ^
   -D MEDFILE_BUILD_SHARED_LIBS=ON ^
   -D MEDFILE_BUILD_STATIC_LIBS=OFF ^
   -D MEDFILE_USE_UNICODE=OFF ^
+  -D MED_MEDINT_TYPE=long ^
   ..
 
 if errorlevel 1 exit 1
