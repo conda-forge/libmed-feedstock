@@ -1,6 +1,6 @@
-From 803f548215020cabf647bb17af43738dc3c87d47 Mon Sep 17 00:00:00 2001
+From 33f3d646faab2d33b274de5c6bcd5f45185d5183 Mon Sep 17 00:00:00 2001
 From: Mark Harfouche <mark.harfouche@gmail.com>
-Date: Mon, 15 Jan 2024 16:18:36 -0500
+Date: Mon, 15 Jan 2024 17:05:59 -0500
 Subject: [PATCH] link privately
 
 ---
@@ -105,7 +105,7 @@ index e08984c..8d77d81 100644
  
  INSTALL(TARGETS medconforme DESTINATION bin)
 diff --git a/tools/medimport/CMakeLists.txt b/tools/medimport/CMakeLists.txt
-index a48856e..df6fae3 100644
+index a48856e..e15d550 100644
 --- a/tools/medimport/CMakeLists.txt
 +++ b/tools/medimport/CMakeLists.txt
 @@ -57,7 +57,7 @@ IF(MEDFILE_BUILD_SHARED_LIBS)
@@ -113,7 +113,7 @@ index a48856e..df6fae3 100644
      SOVERSION   0
      VERSION 0.4.0)
 -  TARGET_LINK_LIBRARIES(medimportengine medC)
-+  TARGET_LINK_LIBRARIES(medimportengine PRIVATE medC HDF5_LIBS)
++  TARGET_LINK_LIBRARIES(medimportengine PRIVATE medC ${HDF5_LIBS})
    SET_TARGET_PROPERTIES(medimportengine PROPERTIES OUTPUT_NAME medimport)
    INSTALL(TARGETS medimportengine DESTINATION lib${LIB_SUFFIX})
    SET(_lib_to_link "medimportengine")
