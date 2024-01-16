@@ -1,0 +1,122 @@
+From 33f3d646faab2d33b274de5c6bcd5f45185d5183 Mon Sep 17 00:00:00 2001
+From: Mark Harfouche <mark.harfouche@gmail.com>
+Date: Mon, 15 Jan 2024 17:05:59 -0500
+Subject: [PATCH] link privately
+
+---
+ src/CMakeLists.txt               | 8 ++++----
+ tests/c/CMakeLists.txt           | 2 +-
+ tests/f/CMakeLists.txt           | 2 +-
+ tools/mdump/CMakeLists.txt       | 6 +++---
+ tools/medconforme/CMakeLists.txt | 2 +-
+ tools/medimport/CMakeLists.txt   | 2 +-
+ 6 files changed, 11 insertions(+), 11 deletions(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index 9e5a0a8..0630b4c 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -80,7 +80,7 @@ IF(MEDFILE_BUILD_SHARED_LIBS)
+   SET_TARGET_PROPERTIES(medC PROPERTIES
+     SOVERSION 11
+     VERSION   11.1.1)
+-  TARGET_LINK_LIBRARIES(medC ${HDF5_LIBS} ${MPI_LIBS})
++  TARGET_LINK_LIBRARIES(medC PRIVATE ${HDF5_LIBS} ${MPI_LIBS})
+   MED_SET_DEFINITIONS(medC NOGDI)
+   
+   INSTALL(TARGETS medC
+@@ -118,7 +118,7 @@ IF(CMAKE_Fortran_COMPILER_WORKS)
+     SET_TARGET_PROPERTIES(medfwrap PROPERTIES
+       SOVERSION 11
+       VERSION   11.1.1)
+-    TARGET_LINK_LIBRARIES(medfwrap medC)
++    TARGET_LINK_LIBRARIES(medfwrap PRIVATE medC)
+     INSTALL(TARGETS medfwrap
+             EXPORT ${_export_group}
+             RUNTIME DESTINATION bin
+@@ -129,8 +129,8 @@ IF(CMAKE_Fortran_COMPILER_WORKS)
+     SET_TARGET_PROPERTIES(med PROPERTIES
+       SOVERSION 11
+       VERSION   11.1.1)
+-    TARGET_LINK_LIBRARIES(medfwrap medC)
+-    TARGET_LINK_LIBRARIES(med medfwrap)    
++    TARGET_LINK_LIBRARIES(medfwrap PRIVATE medC)
++    TARGET_LINK_LIBRARIES(med PRIVATE medfwrap)
+    
+     # Install only the resulting library:
+     INSTALL(TARGETS med
+diff --git a/tests/c/CMakeLists.txt b/tests/c/CMakeLists.txt
+index e6f80c3..0219d63 100644
+--- a/tests/c/CMakeLists.txt
++++ b/tests/c/CMakeLists.txt
+@@ -26,7 +26,7 @@ FOREACH(testc_SOURCE ${testc_SOURCES})
+   IF(MEDFILE_BUILD_SHARED_LIBS)
+     SET(testc_SHARED_BIN "${testc_BASE}c")
+     ADD_EXECUTABLE(${testc_SHARED_BIN} ${testc_SOURCE})
+-    TARGET_LINK_LIBRARIES(${testc_SHARED_BIN} medC)
++    TARGET_LINK_LIBRARIES(${testc_SHARED_BIN} PRIVATE medC)
+     SET_TARGET_PROPERTIES(${testc_SHARED_BIN} PROPERTIES OUTPUT_NAME ${testc_BASE})
+     GET_TARGET_PROPERTY(TMP ${testc_SHARED_BIN} OUTPUT_NAME)
+     INSTALL(TARGETS ${testc_SHARED_BIN} DESTINATION bin/testc)
+diff --git a/tests/f/CMakeLists.txt b/tests/f/CMakeLists.txt
+index 27e170e..8cda1b3 100644
+--- a/tests/f/CMakeLists.txt
++++ b/tests/f/CMakeLists.txt
+@@ -69,7 +69,7 @@ FOREACH(testf_SOURCE ${testf_SOURCES})
+   IF(MEDFILE_BUILD_SHARED_LIBS)
+     SET(testf_SHARED_BIN "${testf_BASE}f")
+     ADD_EXECUTABLE(${testf_SHARED_BIN} ${testf_SOURCE})
+-    TARGET_LINK_LIBRARIES(${testf_SHARED_BIN} med)
++    TARGET_LINK_LIBRARIES(${testf_SHARED_BIN} PRIVATE med)
+     SET_TARGET_PROPERTIES(${testf_SHARED_BIN} PROPERTIES OUTPUT_NAME ${testf_BASE})
+     GET_TARGET_PROPERTY(TMP ${testf_SHARED_BIN} OUTPUT_NAME)
+     INSTALL(TARGETS ${testf_SHARED_BIN} DESTINATION bin/testf)
+diff --git a/tools/mdump/CMakeLists.txt b/tools/mdump/CMakeLists.txt
+index 5167725..f3ed21d 100644
+--- a/tools/mdump/CMakeLists.txt
++++ b/tools/mdump/CMakeLists.txt
+@@ -24,13 +24,13 @@ SET(mdump4_SOURCES
+  )
+ 
+ ADD_EXECUTABLE(mdump2 ${mdump2_SOURCES})
+-TARGET_LINK_LIBRARIES(mdump2 ${MEDFILE_ENGINE_LIB})
++TARGET_LINK_LIBRARIES(mdump2 PRIVATE ${MEDFILE_ENGINE_LIB})
+ 
+ ADD_EXECUTABLE(mdump3 ${mdump3_SOURCES})
+-TARGET_LINK_LIBRARIES(mdump3 ${MEDFILE_ENGINE_LIB})
++TARGET_LINK_LIBRARIES(mdump3 PRIVATE ${MEDFILE_ENGINE_LIB})
+ 
+ ADD_EXECUTABLE(mdump4 ${mdump4_SOURCES})
+-TARGET_LINK_LIBRARIES(mdump4 ${MEDFILE_ENGINE_LIB})
++TARGET_LINK_LIBRARIES(mdump4 PRIVATE ${MEDFILE_ENGINE_LIB})
+ 
+ INSTALL(TARGETS mdump2 DESTINATION bin)
+ INSTALL(TARGETS mdump3 DESTINATION bin)
+diff --git a/tools/medconforme/CMakeLists.txt b/tools/medconforme/CMakeLists.txt
+index e08984c..8d77d81 100644
+--- a/tools/medconforme/CMakeLists.txt
++++ b/tools/medconforme/CMakeLists.txt
+@@ -9,6 +9,6 @@ SET(medconforme_SOURCES
+   medconforme.c)
+ 
+ ADD_EXECUTABLE(medconforme ${medconforme_SOURCES})
+-TARGET_LINK_LIBRARIES(medconforme ${MEDFILE_ENGINE_LIB})
++TARGET_LINK_LIBRARIES(medconforme PRIVATE ${MEDFILE_ENGINE_LIB})
+ 
+ INSTALL(TARGETS medconforme DESTINATION bin)
+diff --git a/tools/medimport/CMakeLists.txt b/tools/medimport/CMakeLists.txt
+index a48856e..e15d550 100644
+--- a/tools/medimport/CMakeLists.txt
++++ b/tools/medimport/CMakeLists.txt
+@@ -57,7 +57,7 @@ IF(MEDFILE_BUILD_SHARED_LIBS)
+   SET_TARGET_PROPERTIES(medimportengine PROPERTIES
+     SOVERSION   0
+     VERSION 0.4.0)
+-  TARGET_LINK_LIBRARIES(medimportengine medC)
++  TARGET_LINK_LIBRARIES(medimportengine PRIVATE medC ${HDF5_LIBS})
+   SET_TARGET_PROPERTIES(medimportengine PROPERTIES OUTPUT_NAME medimport)
+   INSTALL(TARGETS medimportengine DESTINATION lib${LIB_SUFFIX})
+   SET(_lib_to_link "medimportengine")
+-- 
+2.34.1
+
