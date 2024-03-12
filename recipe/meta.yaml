@@ -57,7 +57,7 @@ test:
   requires:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  source_files:
+  files:
     - tests
   imports:
     - med
