@@ -2,8 +2,10 @@
 
 mkdir build
 cd build
-set FCFLAGS=-fdefault-integer-8 %FCFLAGS%
-set FFLAGS=-fdefault-integer-8 %FFLAGS%
+rem fortran support is currently disabled on windows using 'disable-fortran.patch',
+rem so the following 2 lines are commented out
+rem set FCFLAGS=-fdefault-integer-8 %FCFLAGS%
+rem set FFLAGS=-fdefault-integer-8 %FFLAGS%
 
 cmake -G "Ninja" ^
   %CMAKE_ARGS% ^
@@ -17,7 +19,7 @@ cmake -G "Ninja" ^
   -D MEDFILE_BUILD_SHARED_LIBS=ON ^
   -D MEDFILE_BUILD_STATIC_LIBS=OFF ^
   -D MEDFILE_USE_UNICODE=OFF ^
-  -D MED_MEDINT_TYPE=long ^
+  -D MED_MEDINT_TYPE=int ^
   ..
 
 if errorlevel 1 exit 1

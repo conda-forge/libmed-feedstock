@@ -29,9 +29,7 @@ source:
     - patches/link-privately.patch
 
 build:
-  number: 10
-  # string: aster_py{{ CONDA_PY }}_mpi_{{ mpi }}_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [mpi != "nompi"]
-  # string: aster_py{{ CONDA_PY }}_nompi_h{{ PKG_HASH }}_{{ PKG_BUILDNUM }}      # [mpi == "nompi"]
+  number: 11
   run_exports:
     - {{ pin_subpackage(name, 'x.x') }}
 
@@ -56,6 +54,11 @@ requirements:
 #    - {{ mpi }}                 # [mpi != "nompi"]
 
 test:
+  requires:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  files:
+    - tests
   imports:
     - med
   commands:
