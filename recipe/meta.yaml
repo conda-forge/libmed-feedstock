@@ -1,7 +1,15 @@
 {% set name = "libmed" %}
 {% set version = "4.1.1" %}
+{% set build = 12 %}
 {% set sha256 = "fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0" %}
 
+# ensure mpi is defined (needed for conda-smithy recipe-lint)
+{% set mpi = mpi or 'nompi' %}
+
+{% if mpi == 'nompi' %}
+# prioritize nompi variant via build number
+{% set build = build + 100 %}
+{% endif %}
 
 package:
   name: {{ name }}
@@ -29,9 +37,22 @@ source:
     - patches/link-privately.patch
 
 build:
-  number: 11
+  number: {{ build }}
+  # Per https://conda-forge.org/docs/maintainer/knowledge_base.html#preferring-a-provider-usually-nompi
+  # add build string so packages can depend on
+  # mpi or nompi variants explicitly:
+  # `pkg * mpi_mpich_*` for mpich
+  # `pkg * mpi_*` for any mpi
+  # `pkg * nompi_*` for no mpi
+
+  {% if mpi != 'nompi' %}
+  {% set mpi_prefix = "mpi_" + mpi %}
+  {% else %}
+  {% set mpi_prefix = "nompi" %}
+  {% endif %}
+  string: "{{ mpi_prefix }}_h{{ PKG_HASH }}_{{ build }}"  
   run_exports:
-    - {{ pin_subpackage(name, 'x.x') }}
+    - {{ pin_subpackage(name, 'x.x') }} {{ mpi_prefix }}_*
 
 requirements:
   build:
@@ -46,12 +67,14 @@ requirements:
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
     - python
-    - hdf5
+    - hdf5 * {{mpi_prefix}}_*  # [mpi != "nompi"]
+    - hdf5 * nompi_* # [mpi == "nompi"]
     - zlib
-#    - {{ mpi }}                 # [mpi != "nompi"]
+    - {{ mpi }}                 # [mpi != "nompi"]
   run:
     - python
-#    - {{ mpi }}                 # [mpi != "nompi"]
+    - {{ mpi }}                 # [mpi != "nompi"]
+    - {{ pin_compatible('hdf5', max_pin='x.x') }}
 
 test:
   requires:
