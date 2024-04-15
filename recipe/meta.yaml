@@ -38,6 +38,7 @@ source:
 
 build:
   number: {{ build }}
+  skip: true  # [(osx or win) and mpi != "nompi"]
   # Per https://conda-forge.org/docs/maintainer/knowledge_base.html#preferring-a-provider-usually-nompi
   # add build string so packages can depend on
   # mpi or nompi variants explicitly:
