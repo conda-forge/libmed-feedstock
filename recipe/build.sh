@@ -5,6 +5,12 @@ export FFLAGS="-fdefault-integer-8 ${FFLAGS}"
 mkdir -p build
 pushd build
 
+if [[ -n "$mpi" && "$mpi" != "nompi" ]]; then
+  export MPI_OPTIONS="-D MEDFILE_USE_MPI=True"
+else
+  export MPI_OPTIONS="-D MEDFILE_USE_MPI=False"
+fi
+
 # we specify both old style (all capital PYTHON)
 # and new style (Python) variables
 cmake \
@@ -22,6 +28,7 @@ cmake \
   -D MEDFILE_BUILD_STATIC_LIBS=OFF \
   -D MEDFILE_USE_UNICODE=OFF \
   -D MED_MEDINT_TYPE=long \
+  ${MPI_OPTIONS} \
   ..
 
 make -j${CPU_COUNT}
