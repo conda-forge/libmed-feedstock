@@ -35,7 +35,7 @@ source:
     - patches/cmake-modern-python.patch  # [win]
     - patches/do-not-make-symlinks-on-windows.patch
     - patches/link-privately.patch
-    - patches/py313_support.patch
+    - patches/py313_support.patch  # [>=py313]
     - patches/fix_swig_4_3_support.patch
 
 build:
