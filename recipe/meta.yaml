@@ -91,6 +91,8 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libmed${SHLIB_EXT}                   # [unix]
     - nm ${PREFIX}/lib/libmedC.so | grep MEDlibraryNumVersion    # [linux]
+  downstreams:
+    - openpisco
 
 about:
   home: https://www.salome-platform.org/user-section/about/med
