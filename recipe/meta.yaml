@@ -36,7 +36,7 @@ source:
     - patches/do-not-make-symlinks-on-windows.patch
     - patches/link-privately.patch
     - patches/py313_support.patch  # [py>=313]
-    - patches/fix_swig_4_3_support.patch
+#    - patches/fix_swig_4_3_support.patch
 
 build:
   number: {{ build }}
@@ -64,7 +64,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}           # [not win]
-    - swig
+    - swig 4.2.1
     - cmake
     - ninja                               # [win]
     - make                                # [unix]
