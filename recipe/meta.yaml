@@ -92,7 +92,7 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libmed${SHLIB_EXT}                   # [unix]
     - nm ${PREFIX}/lib/libmedC.so | grep MEDlibraryNumVersion    # [linux]
-    - pytest -v tests
+    - pytest -v tests  # [build_platform == target_platform]
 
 about:
   home: https://www.salome-platform.org/user-section/about/med
