@@ -1,6 +1,6 @@
 {% set name = "libmed" %}
 {% set version = "4.1.1" %}
-{% set build = 16 %}
+{% set build = 17 %}
 {% set sha256 = "fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0" %}
 
 # ensure mpi is defined (needed for conda-smithy recipe-lint)
@@ -36,7 +36,7 @@ source:
     - patches/do-not-make-symlinks-on-windows.patch
     - patches/link-privately.patch
     - patches/py313_support.patch
-    - patches/fix_swig_4_3_support.patch
+#    - patches/fix_swig_4_3_support.patch
 
 build:
   number: {{ build }}
@@ -63,7 +63,7 @@ requirements:
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - {{ compiler('fortran') }}           # [not win]
-    - swig >=4.0.2
+    - swig 4.2.1  # SWIG 4.3 is not ABI compatible. See https://github.com/conda-forge/libmed-feedstock/issues/74
     - cmake
     - ninja                               # [win]
     - make                                # [unix]
@@ -84,6 +84,7 @@ test:
   requires:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - pytest
   files:
     - tests
   imports:
@@ -91,6 +92,7 @@ test:
   commands:
     - test -f ${PREFIX}/lib/libmed${SHLIB_EXT}                   # [unix]
     - nm ${PREFIX}/lib/libmedC.so | grep MEDlibraryNumVersion    # [linux]
+    - pytest -v tests  # [build_platform == target_platform]
 
 about:
   home: https://www.salome-platform.org/user-section/about/med
