@@ -69,17 +69,14 @@ requirements:
     # So that the pinning can take effect
     # https://github.com/conda-forge/libmed-feedstock/issues/77
     - hdf5
-    - if: mpi != "nompi"
-      then: hdf5 * ${{ mpi_prefix }}_*
-    - if: mpi == "nompi"
-      then: hdf5 * nompi_*
+    - hdf5 * *${{ mpi_prefix }}_*
     - zlib
     - if: mpi != "nompi"
-      then: mpi
+      then: ${{ mpi }}
   run:
     - python
     - if: mpi != "nompi"
-      then: mpi
+      then: ${{ mpi }}
     - ${{ pin_compatible('hdf5', upper_bound='x.x') }}
   run_exports:
     - ${{ pin_subpackage(name, upper_bound='x.x') }}
