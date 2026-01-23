@@ -5,7 +5,6 @@ context:
   version: 4.1.1
   build: 21
   sha256: fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0
-  mpi: mpi or 'nompi'
   mpi_prefix: nompi
 
 package:
@@ -45,7 +44,7 @@ build:
   # `pkg * nompi_*` for no mpi
   number: ${{ build|int + 100 if mpi == "nompi" else build|int }}
   string: ${{ mpi_prefix }}_h${{ hash }}_${{ build }}
-  skip: (osx or win) and mpi != "nompi"
+  skip: (mpi != "nompi" and (osx or win))
 
 requirements:
   build:
