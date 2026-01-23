@@ -69,7 +69,7 @@ requirements:
     # So that the pinning can take effect
     # https://github.com/conda-forge/libmed-feedstock/issues/77
     - hdf5
-    - hdf5 * *${{ mpi_prefix }}_*
+    - hdf5 * mpi_${{ mpi }}_*
     - zlib
     - if: mpi != "nompi"
       then: ${{ mpi }}
