@@ -75,15 +75,16 @@ requirements:
     - if: mpi == "nompi"
       then: hdf5 * nompi_*
     - zlib
-    - if: mpi != "nompi" or mpi != "nompi"
-      then: mpi or 'nompi'.*
+    - if: mpi != "nompi"
+      then: mpi
   run:
     - python
-    - if: mpi != "nompi" or mpi != "nompi"
-      then: mpi or 'nompi'.*
+    - if: mpi != "nompi"
+      then: mpi
     - ${{ pin_compatible('hdf5', upper_bound='x.x') }}
   run_exports:
-    - ${{ pin_subpackage(name, 'x.x') }} ${{ mpi_prefix }}_*
+    - ${{ pin_subpackage(name, upper_bound='x.x') }}
+    - libmed * ${{ mpi_prefix }}_*
 
 tests:
   - python:
