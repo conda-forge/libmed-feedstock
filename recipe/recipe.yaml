@@ -5,7 +5,7 @@ context:
   version: 4.1.1
   build: 21
   sha256: fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0
-  mpi_prefix: nompi
+  mpi_prefix: ${{ mpi }}
 
 package:
   name: ${{ name }}
