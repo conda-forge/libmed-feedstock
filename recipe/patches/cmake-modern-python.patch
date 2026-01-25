@@ -21,7 +21,7 @@
    ${PROJECT_SOURCE_DIR}/include
    ${PROJECT_BINARY_DIR}/include
    ${HDF5_INCLUDE_DIRS}
-@@ -27,16 +27,18 @@
+@@ -27,16 +27,22 @@
    medstructelement_module.i
  )
  
@@ -29,6 +29,10 @@
 -  SET(PYTHON_LIBRARIES "-undefined dynamic_lookup")
 -ENDIF(APPLE)
 -
++IF(APPLE)
++  SET(Python_LIBRARIES "-undefined dynamic_lookup")
++ENDIF(APPLE)
++
  SET(_link_libs
    medC
 -  ${PYTHON_LIBRARIES}
@@ -46,14 +50,11 @@
  
  # Ensure we will be able to run the Python tests from the build tree by outputing
  # files into the package folder:
-@@ -57,10 +59,12 @@
+@@ -57,10 +57,9 @@
  #EF: (OLDWAY)  SWIG_ADD_MODULE(${_module_name} python ${f})
    SWIG_ADD_LIBRARY(${_module_name} TYPE MODULE LANGUAGE python SOURCES ${f})
    SWIG_LINK_LIBRARIES(${_module_name} ${_link_libs})
-+  IF(APPLE)
-+    SWIG_LINK_LIBRARIES(${_module_name} "-undefined dynamic_lookup")
-+  ENDIF(APPLE)
- 
+
    INSTALL(TARGETS ${SWIG_MODULE_${_module_name}_REAL_NAME} DESTINATION ${_install_dir})
    INSTALL_AND_COMPILE_PYTHON_FILE("${CMAKE_CURRENT_BINARY_DIR}/med/${_module_name}.py" ${_install_dir})
 -  
