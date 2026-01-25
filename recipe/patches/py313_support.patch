@@ -1,13 +1,6 @@
-Subject: [PATCH] py313 support
----
-Index: python/med_enum_typemap.i
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/med_enum_typemap.i b/python/med_enum_typemap.i
---- a/python/med_enum_typemap.i	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/med_enum_typemap.i	(date 1734255259967)
+```
+--- a/python/med_enum_typemap.i
++++ b/python/med_enum_typemap.i
 @@ -109,7 +109,7 @@
    if (pclass == NULL) printf("%s\n","Can't get class $1_basetype");
    Py_DECREF(pmod);
@@ -17,14 +10,8 @@ diff --git a/python/med_enum_typemap.i b/python/med_enum_typemap.i
    if (pinst == NULL) printf("%s\n","Can't instanciate class $1_basetype");
    $result=SWIG_Python_AppendOutput($result, pinst);
  }
-Index: python/medsubdomain_int_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medsubdomain_int_wrap.cc b/python/medsubdomain_int_wrap.cc
---- a/python/medsubdomain_int_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medsubdomain_int_wrap.cc	(date 1734255251840)
+--- a/python/medsubdomain_int_wrap.cc
++++ b/python/medsubdomain_int_wrap.cc
 @@ -23155,7 +23155,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
      Py_DECREF(pmod);
@@ -43,14 +30,8 @@ diff --git a/python/medsubdomain_int_wrap.cc b/python/medsubdomain_int_wrap.cc
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medstructelement_long_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medstructelement_long_wrap.cc b/python/medstructelement_long_wrap.cc
---- a/python/medstructelement_long_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medstructelement_long_wrap.cc	(date 1734255259174)
+--- a/python/medstructelement_long_wrap.cc
++++ b/python/medstructelement_long_wrap.cc
 @@ -22960,7 +22960,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
      Py_DECREF(pmod);
@@ -123,14 +104,8 @@ diff --git a/python/medstructelement_long_wrap.cc b/python/medstructelement_long
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_attribute_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medfield_long_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medfield_long_wrap.cc b/python/medfield_long_wrap.cc
---- a/python/medfield_long_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medfield_long_wrap.cc	(date 1734255251012)
+--- a/python/medfield_long_wrap.cc
++++ b/python/medfield_long_wrap.cc
 @@ -24036,7 +24036,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_field_type");
      Py_DECREF(pmod);
@@ -158,14 +133,8 @@ diff --git a/python/medfield_long_wrap.cc b/python/medfield_long_wrap.cc
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medstructelement_int_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medstructelement_int_wrap.cc b/python/medstructelement_int_wrap.cc
---- a/python/medstructelement_int_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medstructelement_int_wrap.cc	(date 1734255254040)
+--- a/python/medstructelement_int_wrap.cc
++++ b/python/medstructelement_int_wrap.cc
 @@ -22960,7 +22960,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
      Py_DECREF(pmod);
@@ -238,14 +207,8 @@ diff --git a/python/medstructelement_int_wrap.cc b/python/medstructelement_int_w
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_attribute_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medfield_int_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medfield_int_wrap.cc b/python/medfield_int_wrap.cc
---- a/python/medfield_int_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medfield_int_wrap.cc	(date 1734255259959)
+--- a/python/medfield_int_wrap.cc
++++ b/python/medfield_int_wrap.cc
 @@ -24036,7 +24036,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_field_type");
      Py_DECREF(pmod);
@@ -273,14 +236,8 @@ diff --git a/python/medfield_int_wrap.cc b/python/medfield_int_wrap.cc
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/med_enumtest_typemap.i
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/med_enumtest_typemap.i b/python/med_enumtest_typemap.i
---- a/python/med_enumtest_typemap.i	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/med_enumtest_typemap.i	(date 1734255259182)
+--- a/python/med_enumtest_typemap.i
++++ b/python/med_enumtest_typemap.i
 @@ -128,7 +128,7 @@
    if (pclass == NULL) printf("%s\n","Can't get class $1_basetype");
    Py_DECREF(pmod);
@@ -290,20 +247,14 @@ diff --git a/python/med_enumtest_typemap.i b/python/med_enumtest_typemap.i
    if (pinst == NULL) printf("%s\n","Can't instanciate class $1_basetype");
    $result=SWIG_Python_AppendOutput($result, pinst);
  }
-Index: python/medsubdomain_long_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medsubdomain_long_wrap.cc b/python/medsubdomain_long_wrap.cc
---- a/python/medsubdomain_long_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medsubdomain_long_wrap.cc	(date 1734254492333)
+--- a/python/medsubdomain_long_wrap.cc
++++ b/python/medsubdomain_long_wrap.cc
 @@ -23155,7 +23155,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
      Py_DECREF(pmod);
      pargs  = Py_BuildValue("(i)",*arg7);
 -    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs);
++    pinst  = PyObject_Call(pclass, pargs, NULL);
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
@@ -312,18 +263,12 @@ diff --git a/python/medsubdomain_long_wrap.cc b/python/medsubdomain_long_wrap.cc
      Py_DECREF(pmod);
      pargs  = Py_BuildValue("(i)",*arg9);
 -    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs);
++    pinst  = PyObject_Call(pclass, pargs, NULL);
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medmesh_int_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medmesh_int_wrap.cc b/python/medmesh_int_wrap.cc
---- a/python/medmesh_int_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medmesh_int_wrap.cc	(date 1734255258405)
+--- a/python/medmesh_int_wrap.cc
++++ b/python/medmesh_int_wrap.cc
 @@ -22757,7 +22757,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_mesh_type");
      Py_DECREF(pmod);
@@ -414,14 +359,8 @@ diff --git a/python/medmesh_int_wrap.cc b/python/medmesh_int_wrap.cc
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medequivalence_long_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medequivalence_long_wrap.cc b/python/medequivalence_long_wrap.cc
---- a/python/medequivalence_long_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medequivalence_long_wrap.cc	(date 1734255247924)
+--- a/python/medequivalence_long_wrap.cc
++++ b/python/medequivalence_long_wrap.cc
 @@ -23227,7 +23227,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
      Py_DECREF(pmod);
@@ -431,14 +370,8 @@ diff --git a/python/medequivalence_long_wrap.cc b/python/medequivalence_long_wra
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medequivalence_int_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medequivalence_int_wrap.cc b/python/medequivalence_int_wrap.cc
---- a/python/medequivalence_int_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medequivalence_int_wrap.cc	(date 1734255247240)
+--- a/python/medequivalence_int_wrap.cc
++++ b/python/medequivalence_int_wrap.cc
 @@ -23227,7 +23227,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_entity_type");
      Py_DECREF(pmod);
@@ -448,14 +381,8 @@ diff --git a/python/medequivalence_int_wrap.cc b/python/medequivalence_int_wrap.
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_entity_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medparameter_int_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medparameter_int_wrap.cc b/python/medparameter_int_wrap.cc
---- a/python/medparameter_int_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medparameter_int_wrap.cc	(date 1734255251825)
+--- a/python/medparameter_int_wrap.cc
++++ b/python/medparameter_int_wrap.cc
 @@ -22699,7 +22699,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_parameter_type");
      Py_DECREF(pmod);
@@ -474,14 +401,8 @@ diff --git a/python/medparameter_int_wrap.cc b/python/medparameter_int_wrap.cc
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_parameter_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medparameter_long_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medparameter_long_wrap.cc b/python/medparameter_long_wrap.cc
---- a/python/medparameter_long_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medparameter_long_wrap.cc	(date 1734255255346)
+--- a/python/medparameter_long_wrap.cc
++++ b/python/medparameter_long_wrap.cc
 @@ -22699,7 +22699,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_parameter_type");
      Py_DECREF(pmod);
@@ -500,14 +421,8 @@ diff --git a/python/medparameter_long_wrap.cc b/python/medparameter_long_wrap.cc
      if (pinst == NULL) printf("%s\n","Can't instanciate class med_parameter_type");
      resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
    }
-Index: python/medmesh_long_wrap.cc
-IDEA additional info:
-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
-<+>UTF-8
-===================================================================
-diff --git a/python/medmesh_long_wrap.cc b/python/medmesh_long_wrap.cc
---- a/python/medmesh_long_wrap.cc	(revision eb503b7edede89edeb14bb4da1b68404a7de1915)
-+++ b/python/medmesh_long_wrap.cc	(date 1734255248586)
+--- a/python/medmesh_long_wrap.cc
++++ b/python/medmesh_long_wrap.cc
 @@ -22757,7 +22757,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_mesh_type");
      Py_DECREF(pmod);
@@ -547,54 +462,4 @@ diff --git a/python/medmesh_long_wrap.cc b/python/medmesh_long_wrap.cc
 @@ -22968,7 +22968,7 @@
      if (pclass == NULL) printf("%s\n","Can't get class med_sorting_type");
      Py_DECREF(pmod);
-     pargs  = Py_BuildValue("(i)",*arg9);
--    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs, NULL);
-     if (pinst == NULL) printf("%s\n","Can't instanciate class med_sorting_type");
-     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
-   }
-@@ -22991,7 +22991,7 @@
-     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
-     Py_DECREF(pmod);
-     pargs  = Py_BuildValue("(i)",*arg11);
--    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs, NULL);
-     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
-     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
-   }
-@@ -23281,7 +23281,7 @@
-     if (pclass == NULL) printf("%s\n","Can't get class med_grid_type");
-     Py_DECREF(pmod);
-     pargs  = Py_BuildValue("(i)",*arg3);
--    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs, NULL);
-     if (pinst == NULL) printf("%s\n","Can't instanciate class med_grid_type");
-     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
-   }
-@@ -24336,7 +24336,7 @@
-     if (pclass == NULL) printf("%s\n","Can't get class med_sorting_type");
-     Py_DECREF(pmod);
-     pargs  = Py_BuildValue("(i)",*arg3);
--    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs, NULL);
-     if (pinst == NULL) printf("%s\n","Can't instanciate class med_sorting_type");
-     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
-   }
-@@ -29667,7 +29667,7 @@
-     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
-     Py_DECREF(pmod);
-     pargs  = Py_BuildValue("(i)",*arg6);
--    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs, NULL);
-     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
-     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
-   }
-@@ -29792,7 +29792,7 @@
-     if (pclass == NULL) printf("%s\n","Can't get class med_axis_type");
-     Py_DECREF(pmod);
-     pargs  = Py_BuildValue("(i)",*arg7);
--    pinst  = PyEval_CallObject(pclass, pargs);
-+    pinst  = PyObject_Call(pclass, pargs, NULL);
-     if (pinst == NULL) printf("%s\n","Can't instanciate class med_axis_type");
-     resultobj=SWIG_Python_AppendOutput(resultobj, pinst);
-   }
+     pargs  = Py_BuildValue("(i)",

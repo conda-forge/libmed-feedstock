@@ -59,9 +59,9 @@ requirements:
     - if: unix
       then: make
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
+      then:
+        - python
+        - cross-python_${{ target_platform }}
   host:
     - python
     # Leave one bare "hdf5" here with no build number constraints
