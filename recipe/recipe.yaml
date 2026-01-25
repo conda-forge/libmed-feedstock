@@ -29,7 +29,8 @@ source:
     # I (hmaarrfk) am about 90% sure it is because SWIG + CMake 3.12 FindPython + OSX
     # has some bugs... so for OSX (and linux), we just fallback to the standard
     # build process
-    - patches/cmake-modern-python.patch
+    - if: win
+      then: patches/cmake-modern-python.patch
     - patches/do-not-make-symlinks-on-windows.patch
     - patches/link-privately.patch
     - patches/py313_support.patch
