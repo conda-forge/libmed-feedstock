@@ -4,13 +4,10 @@
  IF(MEDFILE_BUILD_PYTHON)
    FIND_PACKAGE(SWIG REQUIRED)
    INCLUDE(${SWIG_USE_FILE})
-+  # Prevent CMake from finding system Python on macOS
-+  SET(Python_FIND_FRAMEWORK NEVER)
-+  SET(Python_FIND_REGISTRY NEVER)
-+  # Ensure we use the conda environment Python
-+  SET(Python_FIND_STRATEGY LOCATION)
+-  FIND_PACKAGE(PythonLibs REQUIRED)
+-  FIND_PACKAGE(PythonInterp REQUIRED)  # to get version string ...
 +  FIND_PACKAGE(Python COMPONENTS Interpreter Development REQUIRED)
-+ENDIF()
+ ENDIF()
  
  ## Creation of files med_config.h.cmake
 --- a/python/CMakeLists.txt	2020-01-30 11:03:53.000000000 -0500
@@ -35,18 +32,18 @@
  SET(_link_libs
    medC
 -  ${PYTHON_LIBRARIES}
++  ${Python_LIBRARIES}
    )
-
+ 
 -SET(_install_dir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages/med)
-+# On Apple, use dynamic lookup instead of linking to Python library
-+# This avoids version mismatch issues at runtime
-+IF(NOT APPLE)
-+  LIST(APPEND _link_libs ${Python_LIBRARIES})
-+ENDIF()
-+
-+# Construct install path from Python version
-+SET(_install_dir lib/python${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}/site-packages/med)
-
++MESSAGE("CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}")
++MESSAGE("Python_SITELIB: ${Python_SITELIB}")
++FILE(RELATIVE_PATH _install_dir "${CMAKE_INSTALL_PREFIX}" "${Python_SITELIB}")
++SET(_install_dir "${_install_dir}/med")
++MESSAGE("_install_dir: ${_install_dir}")
++FILE(TO_CMAKE_PATH "${_install_dir}" _install_dir)
++MESSAGE("Installing python package to: ${_install_dir}")
+ 
  # Ensure we will be able to run the Python tests from the build tree by outputing
  # files into the package folder:
 @@ -57,10 +59,12 @@
