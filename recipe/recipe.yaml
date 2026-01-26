@@ -2,9 +2,9 @@ schema_version: 1
 
 context:
   name: libmed
-  version: 4.1.1
+  version: "4.2"
   build: 21
-  sha256: fe1e80c836150ff27049b291fe2f9a11eda9ef9831311df9e39ba16a63c392a0
+  sha256: a0193de4f0fef916ea9b83fb3e69e0717068a6bb41474ea8b6b0dece10b56d13
   mpi_prefix: ${{ mpi }}
 
 package:
@@ -30,7 +30,6 @@ source:
     # has some bugs... so for OSX (and linux), we just fallback to the standard
     # build process
     - patches/cmake-modern-python.patch
-    - patches/do-not-make-symlinks-on-windows.patch
     - patches/link-privately.patch
     - patches/py313_support.patch
 

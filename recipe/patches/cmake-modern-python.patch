@@ -1,17 +1,23 @@
---- a/CMakeLists.txt	2021-10-08 07:45:35.000000000 -0400
-+++ b/CMakeLists.txt	2023-10-29 20:10:24.404003959 -0400
-@@ -113,8 +113,7 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -114,12 +114,10 @@ MED_FIND_MPI()
  IF(MEDFILE_BUILD_PYTHON)
    FIND_PACKAGE(SWIG REQUIRED)
    INCLUDE(${SWIG_USE_FILE})
--  FIND_PACKAGE(PythonLibs REQUIRED)
+   IF (${SWIG_VERSION} VERSION_GREATER_EQUAL "4.3.0")
+     set(CMAKE_SWIG_FLAGS "-DSWIG_GE_40300 ${CMAKE_SWIG_FLAGS}")
+   ENDIF()
+- 
 -  FIND_PACKAGE(PythonInterp REQUIRED)  # to get version string ...
+-  FIND_PACKAGE(PythonLibs REQUIRED)
 +  FIND_PACKAGE(Python COMPONENTS Interpreter Development REQUIRED)
  ENDIF()
  
  ## Creation of files med_config.h.cmake
---- a/python/CMakeLists.txt	2020-01-30 11:03:53.000000000 -0500
-+++ b/python/CMakeLists.txt	2023-10-30 09:46:42.996837593 -0400
+diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
+--- a/python/CMakeLists.txt
++++ b/python/CMakeLists.txt
 @@ -1,7 +1,7 @@
  INCLUDE(${SWIG_USE_FILE})
  
@@ -21,23 +27,14 @@
    ${PROJECT_SOURCE_DIR}/include
    ${PROJECT_BINARY_DIR}/include
    ${HDF5_INCLUDE_DIRS}
-@@ -27,16 +27,22 @@
-   medstructelement_module.i
- )
- 
--IF(APPLE)
--  SET(PYTHON_LIBRARIES "-undefined dynamic_lookup")
--ENDIF(APPLE)
--
-+IF(APPLE)
-+  SET(Python_LIBRARIES "-undefined dynamic_lookup")
-+ENDIF(APPLE)
-+
- SET(_link_libs
-   medC
--  ${PYTHON_LIBRARIES}
-+  ${Python_LIBRARIES}
-   )
+@@ -31,11 +31,17 @@ SET(_link_libs medC)
+ # We only need to actually link to python libs on windows
+ IF (APPLE)
+   LIST(APPEND _link_libs "-undefined dynamic_lookup")
+ ELSEIF(WIN32)
+-  LIST(APPEND _link_libs "${PYTHON_LIBRARIES}")
++  LIST(APPEND _link_libs "${Python_LIBRARIES}")
+ ENDIF ()
  
 -SET(_install_dir lib/python${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}/site-packages/med)
 +MESSAGE("CMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}")
@@ -50,14 +47,3 @@
  
  # Ensure we will be able to run the Python tests from the build tree by outputing
  # files into the package folder:
-@@ -57,10 +57,9 @@
- #EF: (OLDWAY)  SWIG_ADD_MODULE(${_module_name} python ${f})
-   SWIG_ADD_LIBRARY(${_module_name} TYPE MODULE LANGUAGE python SOURCES ${f})
-   SWIG_LINK_LIBRARIES(${_module_name} ${_link_libs})
-
-   INSTALL(TARGETS ${SWIG_MODULE_${_module_name}_REAL_NAME} DESTINATION ${_install_dir})
-   INSTALL_AND_COMPILE_PYTHON_FILE("${CMAKE_CURRENT_BINARY_DIR}/med/${_module_name}.py" ${_install_dir})
--  
- ENDFOREACH()
- 
- INSTALL_AND_COMPILE_PYTHON_FILE("${CMAKE_CURRENT_SOURCE_DIR}/__init__.py" ${_install_dir})
