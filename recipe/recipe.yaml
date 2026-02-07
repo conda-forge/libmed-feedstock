@@ -21,8 +21,6 @@ source:
     # https://github.com/HDFGroup/hdf5/issues/3797
     - patches/ignore-hdf5-bounds-check-cmake.patch
     - patches/ignore-hdf5-bounds-check-source.patch
-    - if: win
-      then: patches/disable-fortran.patch
     - patches/do_not_modify_windows_path.patch
     - patches/install-in-runtime-and_archive.patch
     # without this patch, OSX finds the system python since it is a newer version
@@ -49,8 +47,7 @@ requirements:
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - ${{ compiler('cxx') }}
-    - if: not win
-      then: ${{ compiler('fortran') }}
+    - ${{ compiler('fortran') }}
     - swig 4.2.1.*
     - cmake
     - if: win
@@ -111,7 +108,7 @@ about:
     The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.
   homepage: https://www.salome-platform.org/user-section/about/med
   repository: https://git.salome-platform.org/gitweb/?p=modules/med.git;a=summary
-  documentation: http://www.salome-platform.org/
+  documentation: https://www.salome-platform.org/
 
 extra:
   recipe-maintainers:
