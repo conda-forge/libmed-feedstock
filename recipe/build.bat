@@ -1,11 +1,16 @@
 @ECHO ON
 
+setlocal ENABLEDELAYEDEXPANSION
+
 mkdir build
 cd build
-rem fortran support is currently disabled on windows using 'disable-fortran.patch',
-rem so the following 2 lines are commented out
-rem set FCFLAGS=-fdefault-integer-8 %FCFLAGS%
-rem set FFLAGS=-fdefault-integer-8 %FFLAGS%
+
+:: Needed by IFX
+set "LIB=%BUILD_PREFIX%\Library\lib;%LIB%"
+set "INCLUDE=%BUILD_PREFIX%\opt\compiler\include\intel64;%INCLUDE%"
+set "CMAKE_ARGS=!CMAKE_ARGS! -D HDF5_BUILD_FORTRAN:BOOL=ON"
+
+set FCFLAGS=/fpp /nologo %FCFLAGS%
 
 cmake -G "Ninja" ^
   %CMAKE_ARGS% ^
@@ -13,6 +18,7 @@ cmake -G "Ninja" ^
   -D Python_FIND_REGISTRY:STRING=NEVER ^
   -D Python3_ROOT_DIR:FILEPATH="%PREFIX%" ^
   -D HDF5_ROOT_DIR:FILEPATH="%LIBRARY_PREFIX%" ^
+  -D CMAKE_Fortran_FLAGS:STRING="%FCFLAGS%" ^
   -D MEDFILE_INSTALL_DOC=OFF ^
   -D MEDFILE_BUILD_PYTHON=ON ^
   -D MEDFILE_BUILD_TESTS=OFF ^
@@ -34,3 +40,5 @@ copy %LIBRARY_BIN%\mdump4.exe %LIBRARY_BIN%\mdump.exe
 if errorlevel 1 exit 1
 copy %LIBRARY_BIN%\xmdump4 %LIBRARY_BIN%\xmdump
 if errorlevel 1 exit 1
+
+endlocal

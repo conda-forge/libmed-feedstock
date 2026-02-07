@@ -11,7 +11,7 @@ Summary: MED : interoperable format for data interchange between mesh based solv
 
 Development: https://git.salome-platform.org/gitweb/?p=modules/med.git;a=summary
 
-Documentation: http://www.salome-platform.org/
+Documentation: https://www.salome-platform.org/
 
 The purpose of the MED module is to provide a standard for storing and recovering computer data associated to numerical meshes and fields, and to facilitate the exchange between codes and solvers.
 
