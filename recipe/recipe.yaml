@@ -91,6 +91,9 @@ tests:
       run:
         - ${{ compiler('c') }}
         - ${{ compiler('cxx') }}
+        - ${{ compiler('fortran') }}
+        - cmake
+        - ninja
         - pytest
     script:
       - if: unix
