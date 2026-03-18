@@ -21,14 +21,6 @@ if(MEDFWRAP_LIB)
     message(STATUS "MED Fortran wrapper library: ${MEDFWRAP_LIB}")
 endif()
 
-# Match the Fortran calling convention used to build libmed.
-# The med library passes character string hidden lengths at the end of
-# the argument list (/iface:mixed_str_len_arg) rather than right after
-# each string pointer (the IFX default). Callers must use the same convention.
-if(WIN32 AND (CMAKE_Fortran_COMPILER_ID STREQUAL "IntelLLVM" OR CMAKE_Fortran_COMPILER_ID STREQUAL "Intel"))
-    set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} /iface:mixed_str_len_arg")
-endif()
-
 set(TESTS test_file_ops test_mesh test_field)
 
 foreach(T ${TESTS})

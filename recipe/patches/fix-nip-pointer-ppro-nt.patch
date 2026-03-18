@@ -1,0 +1,20 @@
+--- a/src/cfi/medlocalizationcf.c
++++ b/src/cfi/medlocalizationcf.c
+@@ -106,7 +106,7 @@
+ #ifdef PPRO_NT
+ med_int 
+ MLCFLCI(med_idt *fid, med_int *it, char*lname, unsigned int bidon1, 
+-		  med_int *gtype, med_int *sdim, med_int nip, 
++		  med_int *gtype, med_int *sdim, med_int *nip, 
+ 		  char * giname, unsigned int bidon2,
+ 		  char * isname, unsigned int bidon3,
+ 		  med_int *nsmc, med_int *sgtype)
+@@ -148,7 +148,7 @@
+ #ifdef PPRO_NT
+ med_int
+ MLCFLNI(med_idt *fid, char*lname, unsigned int bidon1, med_int *lnamelen,
+-		  med_int *gtype, med_int *sdim, med_int nip,
++		  med_int *gtype, med_int *sdim, med_int *nip,
+ 		  char * giname, unsigned int bidon2,
+ 		  char * isname, unsigned int bidon3,
+ 		  med_int *nsmc, med_int *sgtype)

@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: libmed
   version: "4.2"
-  build: 22
+  build: 26
   sha256: a0193de4f0fef916ea9b83fb3e69e0717068a6bb41474ea8b6b0dece10b56d13
   mpi_prefix: ${{ mpi }}
 
@@ -30,6 +30,12 @@ source:
     - patches/cmake-modern-python.patch
     - patches/link-privately.patch
     - patches/py313_support.patch
+    - if: win
+      then: patches/remove-mixed-str-len-arg.patch
+    - if: win
+      then: patches/fopen-binary-mode-windows.patch
+    - if: win
+      then: patches/fix-nip-pointer-ppro-nt.patch
 
 build:
   # Per https://conda-forge.org/docs/maintainer/knowledge_base.html#preferring-a-provider-usually-nompi
