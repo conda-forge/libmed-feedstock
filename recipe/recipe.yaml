@@ -55,7 +55,7 @@ requirements:
     - ${{ compiler('cxx') }}
     - ${{ compiler('fortran') }}
     - swig 4.2.1.*
-    - cmake
+    - cmake <4.3
     - if: win
       then: ninja
     - if: unix
