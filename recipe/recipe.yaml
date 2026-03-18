@@ -98,7 +98,7 @@ tests:
         - ${{ compiler('c') }}
         - ${{ compiler('cxx') }}
         - ${{ compiler('fortran') }}
-        - cmake
+        - cmake <4.3
         - ninja
         - pytest
     script:
