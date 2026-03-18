@@ -21,6 +21,13 @@ if(MEDFWRAP_LIB)
     message(STATUS "MED Fortran wrapper library: ${MEDFWRAP_LIB}")
 endif()
 
+# On Linux, med_int=long (8 bytes). The MED Fortran header constants
+# (MED_NO_DT, MED_FLOAT64, etc.) are declared as plain 'integer' (4 bytes).
+# Promote all default integers to 8 bytes so they match the C library ABI.
+if(NOT WIN32)
+    set(CMAKE_Fortran_FLAGS "${CMAKE_Fortran_FLAGS} -fdefault-integer-8")
+endif()
+
 set(TESTS test_file_ops test_mesh test_field)
 
 foreach(T ${TESTS})

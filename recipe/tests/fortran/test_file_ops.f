@@ -10,11 +10,11 @@ C
       implicit none
       include 'med.hf'
 
-      integer*8 cret
+      integer cret
       integer*8 fid
       character*200 des
       character*200 des_read
-      integer*8 major, minor, rel
+      integer major, minor, rel
 
 C     Get MED library version
       call mlbnuv(major, minor, rel, cret)

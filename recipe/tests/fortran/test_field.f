@@ -13,13 +13,8 @@ C
       include 'med.hf'
 
       integer*8 fid
-      integer*8 cret
-      integer*8 mdim, sdim, nnoe
-C     MED_NO_DT/MED_NO_IT from med_parameter.hf are integer*4.
-C     On Linux med_int=long (8 bytes), so we need integer*8 versions
-C     to avoid sign-extension issues when passing to the C library.
-      integer*8 MY_NO_DT, MY_NO_IT
-      parameter (MY_NO_DT=-1, MY_NO_IT=-1)
+      integer cret
+      integer mdim, sdim, nnoe
       character*64 maa
       character*16 nomcoo(3)
       character*16 unicoo(3)
@@ -32,8 +27,8 @@ C     Field variables
       character*16 cunit(3)
       real*8 val(12)
       real*8 val_read(12)
-      integer*8 nfd, ncomp
-      integer*8 i
+      integer nfd, ncomp
+      integer i
 
       parameter (mdim=3, sdim=3, nnoe=4)
       parameter (maa='field_mesh', fname='displacement')
@@ -70,7 +65,7 @@ C     Create mesh (required as field support)
       endif
 
 C     Write node coordinates
-      call mmhcow(fid, maa, MY_NO_DT, MY_NO_IT, dt,
+      call mmhcow(fid, maa, MED_NO_DT, MED_NO_IT, dt,
      &     MED_FULL_INTERLACE, nnoe, coo, cret)
       if (cret .ne. 0) then
          print *, 'ERROR: mmhcow failed'
@@ -86,7 +81,7 @@ C     Create a field (3-component real field on the mesh)
       endif
 
 C     Write real field values at nodes
-      call mfdrvw(fid, fname, MY_NO_DT, MY_NO_IT, dt,
+      call mfdrvw(fid, fname, MED_NO_DT, MED_NO_IT, dt,
      &     MED_NODE, MED_NONE, MED_FULL_INTERLACE,
      &     MED_ALL_CONSTITUENT, nnoe, val, cret)
       if (cret .ne. 0) then
@@ -135,7 +130,7 @@ C     Query number of components in field 1
       print *, 'Field components:', ncomp
 
 C     Read real field values back
-      call mfdrvr(fid, fname, MY_NO_DT, MY_NO_IT,
+      call mfdrvr(fid, fname, MED_NO_DT, MED_NO_IT,
      &     MED_NODE, MED_NONE, MED_FULL_INTERLACE,
      &     MED_ALL_CONSTITUENT, val_read, cret)
       if (cret .ne. 0) then
