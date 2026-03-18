@@ -24,7 +24,7 @@ import sys
 #   "const unsigned int bidon,"      (standalone line)
 #   "char *name,  unsigned int bidon1, med_int *lon1,"  (inline)
 _BIDON_PARAM = re.compile(
-    r",?\s*(?:const\s+)?unsigned\s+int\s+bidon\d*\b\s*,?"
+    r",?\s*(?:const\s+)?(?:unsigned\s+int|int\s+unsigned)\s+bidon\d*\b\s*,?"
 )
 
 
