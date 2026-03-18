@@ -15,6 +15,11 @@ C
       integer*8 fid
       integer*8 cret
       integer*8 mdim, sdim, nnoe, ntet
+C     MED_NO_DT/MED_NO_IT from med_parameter.hf are integer*4.
+C     On Linux med_int=long (8 bytes), so we need integer*8 versions
+C     to avoid sign-extension issues when passing to the C library.
+      integer*8 MY_NO_DT, MY_NO_IT
+      parameter (MY_NO_DT=-1, MY_NO_IT=-1)
       character*64 maa
       character*200 desc
       character*16 nomcoo(3)
@@ -65,7 +70,7 @@ C     Create unstructured 3D mesh
       endif
 
 C     Write node coordinates
-      call mmhcow(fid, maa, MED_NO_DT, MED_NO_IT, dt,
+      call mmhcow(fid, maa, MY_NO_DT, MY_NO_IT, dt,
      &     MED_FULL_INTERLACE, nnoe, coo, cret)
       if (cret .ne. 0) then
          print *, 'ERROR: mmhcow failed'
@@ -73,7 +78,7 @@ C     Write node coordinates
       endif
 
 C     Write element connectivity (1 TETRA4)
-      call mmhcyw(fid, maa, MED_NO_DT, MED_NO_IT, dt,
+      call mmhcyw(fid, maa, MY_NO_DT, MY_NO_IT, dt,
      &     MED_CELL, MED_TETRA4, MED_NODAL,
      &     MED_FULL_INTERLACE, ntet, con, cret)
       if (cret .ne. 0) then
@@ -128,7 +133,7 @@ C     Read mesh info by index
       print *, 'Mesh dim:', mdim_read, ' Space dim:', sdim_read
 
 C     Read coordinates back
-      call mmhcor(fid, maa_read, MED_NO_DT, MED_NO_IT,
+      call mmhcor(fid, maa_read, MY_NO_DT, MY_NO_IT,
      &     MED_FULL_INTERLACE, coo_read, cret)
       if (cret .ne. 0) then
          print *, 'ERROR: mmhcor failed'
