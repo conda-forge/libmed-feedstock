@@ -1,0 +1,12 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -87,9 +87,6 @@
+   ADD_DEFINITIONS(-DPPRO_NT_CALL)        # For windows system functions call
+ 
+   IF(NOT MINGW)
+-    # Needed to avoid a seg fault at runtime!
+-    # The variable is not very well documented but seems to exist
+-    SET(CMAKE_Fortran_FLAGS  "/iface:mixed_str_len_arg ${CMAKE_Fortran_FLAGS}")
+     ADD_DEFINITIONS(-DPPRO_NT) # For windows medfile function nammes
+   ENDIF()
+ 
