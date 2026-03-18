@@ -30,11 +30,11 @@ def fortran_build_dir(tmp_path_factory):
     if env_cmake_args:
         cmake_args = env_cmake_args.split()
 
-    # On Windows, default to Ninja (required for IFX)
-    if sys.platform == "win32":
-        has_generator = any(a.startswith("-G") for a in cmake_args)
-        if not has_generator and shutil.which("ninja"):
-            cmake_args.extend(["-G", "Ninja"])
+    # Default to Ninja when available (required for IFX on Windows,
+    # avoids needing 'make' in test requirements on Linux)
+    has_generator = any(a.startswith("-G") for a in cmake_args)
+    if not has_generator and shutil.which("ninja"):
+        cmake_args.extend(["-G", "Ninja"])
 
     # Configure
     cmd = ["cmake", str(FORTRAN_DIR)] + cmake_args
