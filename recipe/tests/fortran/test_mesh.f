@@ -13,8 +13,8 @@ C
       include 'med.hf'
 
       integer*8 fid
-      integer cret
-      integer mdim, sdim, nnoe, ntet
+      integer*8 cret
+      integer*8 mdim, sdim, nnoe, ntet
       character*64 maa
       character*200 desc
       character*16 nomcoo(3)
@@ -23,17 +23,17 @@ C
       real*8 coo_read(12)
       real*8 dt
 C     Element connectivity: 1 tetrahedron with 4 nodes
-      integer con(4)
+      integer*8 con(4)
 C     Read-back variables
-      integer nmesh
-      integer type, stype, nstep, atype
+      integer*8 nmesh
+      integer*8 type, stype, nstep, atype
       character*64 maa_read
       character*16 nomcoo_read(3)
       character*16 unicoo_read(3)
       character*200 desc_read
       character*16 dtunit_read
-      integer sdim_read, mdim_read
-      integer i
+      integer*8 sdim_read, mdim_read
+      integer*8 i
 
       parameter (mdim=3, sdim=3, nnoe=4, ntet=1)
       parameter (maa='test_mesh', dt=0.0d0)

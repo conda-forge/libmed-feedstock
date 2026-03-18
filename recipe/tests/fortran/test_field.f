@@ -13,8 +13,8 @@ C
       include 'med.hf'
 
       integer*8 fid
-      integer cret
-      integer mdim, sdim, nnoe
+      integer*8 cret
+      integer*8 mdim, sdim, nnoe
       character*64 maa
       character*16 nomcoo(3)
       character*16 unicoo(3)
@@ -27,8 +27,8 @@ C     Field variables
       character*16 cunit(3)
       real*8 val(12)
       real*8 val_read(12)
-      integer nfd, ncomp
-      integer i
+      integer*8 nfd, ncomp
+      integer*8 i
 
       parameter (mdim=3, sdim=3, nnoe=4)
       parameter (maa='field_mesh', fname='displacement')
