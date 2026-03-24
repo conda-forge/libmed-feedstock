@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: libmed
   version: "4.2"
-  build: 26
+  build: 27
   sha256: a0193de4f0fef916ea9b83fb3e69e0717068a6bb41474ea8b6b0dece10b56d13
   mpi_prefix: ${{ mpi }}
 
@@ -31,12 +31,10 @@ source:
     - patches/link-privately.patch
     - patches/py313_support.patch
     - if: win
-      then: patches/remove-mixed-str-len-arg.patch
-    - if: win
-      then: patches/fopen-binary-mode-windows.patch
-    - if: win
-      then: patches/fix-nip-pointer-ppro-nt.patch
-
+      then:
+        - patches/remove-mixed-str-len-arg.patch
+        - patches/fopen-binary-mode-windows.patch
+        - patches/fix-nip-pointer-ppro-nt.patch
 build:
   # Per https://conda-forge.org/docs/maintainer/knowledge_base.html#preferring-a-provider-usually-nompi
   # add build string so packages can depend on
@@ -72,8 +70,7 @@ requirements:
     - hdf5
     - if: mpi != "nompi"
       then: hdf5 * mpi_${{ mpi }}_*
-    - if: mpi == "nompi"
-      then: hdf5 * nompi_*
+      else: hdf5 * nompi_*
     - zlib
     - if: mpi != "nompi"
       then: ${{ mpi }}
