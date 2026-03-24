@@ -5,7 +5,7 @@
 
 [workspace]
 name = "libmed-feedstock"
-version = "3.56.3"  # conda-smithy version used to generate this file
+version = "3.57.0"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/libmed-feedstock"
 authors = ["@conda-forge/libmed"]
 channels = ["conda-forge"]
@@ -23,366 +23,726 @@ description = "List contents of all packages found in rattler-build build direct
 [tasks.build]
 cmd = "rattler-build build --recipe recipe"
 description = "Build libmed-feedstock directly (without setup scripts), no particular variant specified"
-[tasks."build-linux_64_mpimpichpython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpimpichpython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpimpichpython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpimpichpython3.10.____cpython"
-[tasks."build-linux_64_mpimpichpython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpimpichpython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpimpichpython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpimpichpython3.11.____cpython"
-[tasks."build-linux_64_mpimpichpython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpimpichpython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpimpichpython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpimpichpython3.12.____cpython"
-[tasks."build-linux_64_mpimpichpython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpimpichpython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpimpichpython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpimpichpython3.13.____cp313"
-[tasks."build-linux_64_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpimpichpython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpimpichpython3.14.____cp314"
-[tasks."build-linux_64_mpinompipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpinompipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpinompipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpinompipython3.10.____cpython"
-[tasks."build-linux_64_mpinompipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpinompipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpinompipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpinompipython3.11.____cpython"
-[tasks."build-linux_64_mpinompipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpinompipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpinompipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpinompipython3.12.____cpython"
-[tasks."build-linux_64_mpinompipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpinompipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpinompipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpinompipython3.13.____cp313"
-[tasks."build-linux_64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpinompipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpinompipython3.14.____cp314"
-[tasks."build-linux_64_mpiopenmpipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpiopenmpipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpiopenmpipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpiopenmpipython3.10.____cpython"
-[tasks."build-linux_64_mpiopenmpipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpiopenmpipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpiopenmpipython3.11.____cpython"
-[tasks."build-linux_64_mpiopenmpipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpiopenmpipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_64_mpiopenmpipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpiopenmpipython3.12.____cpython"
-[tasks."build-linux_64_mpiopenmpipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpiopenmpipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpiopenmpipython3.13.____cp313"
-[tasks."build-linux_64_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_64_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_64_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_64_mpiopenmpipython3.14.____cp314"
-[tasks."build-linux_aarch64_mpimpichpython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpimpichpython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpimpichpython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpimpichpython3.10.____cpython"
-[tasks."build-linux_aarch64_mpimpichpython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpimpichpython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpimpichpython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpimpichpython3.11.____cpython"
-[tasks."build-linux_aarch64_mpimpichpython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpimpichpython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpimpichpython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpimpichpython3.12.____cpython"
-[tasks."build-linux_aarch64_mpimpichpython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpimpichpython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpimpichpython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpimpichpython3.13.____cp313"
-[tasks."build-linux_aarch64_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpimpichpython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpimpichpython3.14.____cp314"
-[tasks."build-linux_aarch64_mpinompipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpinompipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpinompipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpinompipython3.10.____cpython"
-[tasks."build-linux_aarch64_mpinompipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpinompipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpinompipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpinompipython3.11.____cpython"
-[tasks."build-linux_aarch64_mpinompipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpinompipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpinompipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpinompipython3.12.____cpython"
-[tasks."build-linux_aarch64_mpinompipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpinompipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpinompipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpinompipython3.13.____cp313"
-[tasks."build-linux_aarch64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpinompipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpinompipython3.14.____cp314"
-[tasks."build-linux_aarch64_mpiopenmpipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpiopenmpipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpiopenmpipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.10.____cpython"
-[tasks."build-linux_aarch64_mpiopenmpipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpiopenmpipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.11.____cpython"
-[tasks."build-linux_aarch64_mpiopenmpipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpiopenmpipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpiopenmpipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.12.____cpython"
-[tasks."build-linux_aarch64_mpiopenmpipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpiopenmpipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.13.____cp313"
-[tasks."build-linux_aarch64_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_aarch64_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_aarch64_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_aarch64_mpiopenmpipython3.14.____cp314"
-[tasks."build-linux_ppc64le_mpimpichpython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpimpichpython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpimpichpython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpimpichpython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpimpichpython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpimpichpython3.10.____cpython"
-[tasks."build-linux_ppc64le_mpimpichpython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpimpichpython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpimpichpython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpimpichpython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpimpichpython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpimpichpython3.11.____cpython"
-[tasks."build-linux_ppc64le_mpimpichpython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpimpichpython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpimpichpython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpimpichpython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpimpichpython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpimpichpython3.12.____cpython"
-[tasks."build-linux_ppc64le_mpimpichpython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpimpichpython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpimpichpython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpimpichpython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpimpichpython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpimpichpython3.13.____cp313"
-[tasks."build-linux_ppc64le_mpimpichpython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpimpichpython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpimpichpython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpimpichpython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpimpichpython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpimpichpython3.14.____cp314"
-[tasks."build-linux_ppc64le_mpinompipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpinompipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpinompipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpinompipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpinompipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpinompipython3.10.____cpython"
-[tasks."build-linux_ppc64le_mpinompipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpinompipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpinompipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpinompipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpinompipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpinompipython3.11.____cpython"
-[tasks."build-linux_ppc64le_mpinompipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpinompipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpinompipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpinompipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpinompipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpinompipython3.12.____cpython"
-[tasks."build-linux_ppc64le_mpinompipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpinompipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpinompipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpinompipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpinompipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpinompipython3.13.____cp313"
-[tasks."build-linux_ppc64le_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpinompipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpinompipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpinompipython3.14.____cp314"
-[tasks."build-linux_ppc64le_mpiopenmpipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpiopenmpipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpiopenmpipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpiopenmpipython3.10.____cpython"
-[tasks."build-linux_ppc64le_mpiopenmpipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpiopenmpipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpiopenmpipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpiopenmpipython3.11.____cpython"
-[tasks."build-linux_ppc64le_mpiopenmpipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpiopenmpipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpiopenmpipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpiopenmpipython3.12.____cpython"
-[tasks."build-linux_ppc64le_mpiopenmpipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpiopenmpipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpiopenmpipython3.13.____cp313"
-[tasks."build-linux_ppc64le_mpiopenmpipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant linux_ppc64le_mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-linux_ppc64le_mpiopenmpipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_mpiopenmpipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_mpiopenmpipython3.14.____cp314"
-[tasks."build-osx_64_mpinompipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant osx_64_mpinompipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_64_mpinompipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_64_mpinompipython3.10.____cpython"
-[tasks."build-osx_64_mpinompipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant osx_64_mpinompipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_64_mpinompipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_64_mpinompipython3.11.____cpython"
-[tasks."build-osx_64_mpinompipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant osx_64_mpinompipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_64_mpinompipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_64_mpinompipython3.12.____cpython"
-[tasks."build-osx_64_mpinompipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant osx_64_mpinompipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-osx_64_mpinompipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_64_mpinompipython3.13.____cp313"
-[tasks."build-osx_64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_mpinompipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant osx_64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_64_mpinompipython3.14.____cp314"
-[tasks."build-osx_arm64_mpinompipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant osx_arm64_mpinompipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpinompipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_arm64_mpinompipython3.10.____cpython"
-[tasks."build-osx_arm64_mpinompipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant osx_arm64_mpinompipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpinompipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_arm64_mpinompipython3.11.____cpython"
-[tasks."build-osx_arm64_mpinompipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant osx_arm64_mpinompipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpinompipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_arm64_mpinompipython3.12.____cpython"
-[tasks."build-osx_arm64_mpinompipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant osx_arm64_mpinompipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpinompipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_arm64_mpinompipython3.13.____cp313"
-[tasks."build-osx_arm64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_mpinompipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant osx_arm64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-osx_arm64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant osx_arm64_mpinompipython3.14.____cp314"
-[tasks."build-win_64_mpinompipython3.10.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_mpinompipython3.10.____cpython.yaml"
-description = "Build libmed-feedstock with variant win_64_mpinompipython3.10.____cpython directly (without setup scripts)"
-[tasks."inspect-win_64_mpinompipython3.10.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_mpinompipython3.10.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant win_64_mpinompipython3.10.____cpython"
-[tasks."build-win_64_mpinompipython3.11.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_mpinompipython3.11.____cpython.yaml"
-description = "Build libmed-feedstock with variant win_64_mpinompipython3.11.____cpython directly (without setup scripts)"
-[tasks."inspect-win_64_mpinompipython3.11.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_mpinompipython3.11.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant win_64_mpinompipython3.11.____cpython"
-[tasks."build-win_64_mpinompipython3.12.____cpython"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_mpinompipython3.12.____cpython.yaml"
-description = "Build libmed-feedstock with variant win_64_mpinompipython3.12.____cpython directly (without setup scripts)"
-[tasks."inspect-win_64_mpinompipython3.12.____cpython"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_mpinompipython3.12.____cpython.yaml"
-description = "List contents of libmed-feedstock packages built for variant win_64_mpinompipython3.12.____cpython"
-[tasks."build-win_64_mpinompipython3.13.____cp313"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_mpinompipython3.13.____cp313.yaml"
-description = "Build libmed-feedstock with variant win_64_mpinompipython3.13.____cp313 directly (without setup scripts)"
-[tasks."inspect-win_64_mpinompipython3.13.____cp313"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_mpinompipython3.13.____cp313.yaml"
-description = "List contents of libmed-feedstock packages built for variant win_64_mpinompipython3.13.____cp313"
-[tasks."build-win_64_mpinompipython3.14.____cp314"]
-cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_mpinompipython3.14.____cp314.yaml"
-description = "Build libmed-feedstock with variant win_64_mpinompipython3.14.____cp314 directly (without setup scripts)"
-[tasks."inspect-win_64_mpinompipython3.14.____cp314"]
-cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_mpinompipython3.14.____cp314.yaml"
-description = "List contents of libmed-feedstock packages built for variant win_64_mpinompipython3.14.____cp314"
+[tasks."build-linux_64_hdf51.14.6mpimpichpython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpimpichpython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpimpichpython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpimpichpython3.10.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpimpichpython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpimpichpython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpimpichpython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpimpichpython3.11.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpimpichpython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpimpichpython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpimpichpython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpimpichpython3.12.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpimpichpython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpimpichpython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpimpichpython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpimpichpython3.13.____cp313"
+[tasks."build-linux_64_hdf51.14.6mpimpichpython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpimpichpython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpimpichpython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpimpichpython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpimpichpython3.14.____cp314"
+[tasks."build-linux_64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpinompipython3.10.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpinompipython3.11.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpinompipython3.12.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpinompipython3.13.____cp313"
+[tasks."build-linux_64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpinompipython3.14.____cp314"
+[tasks."build-linux_64_hdf51.14.6mpiopenmpipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpiopenmpipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpiopenmpipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpiopenmpipython3.10.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpiopenmpipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpiopenmpipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpiopenmpipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpiopenmpipython3.11.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpiopenmpipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpiopenmpipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpiopenmpipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpiopenmpipython3.12.____cpython"
+[tasks."build-linux_64_hdf51.14.6mpiopenmpipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpiopenmpipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpiopenmpipython3.13.____cp313"
+[tasks."build-linux_64_hdf51.14.6mpiopenmpipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf51.14.6mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf51.14.6mpiopenmpipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf51.14.6mpiopenmpipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf51.14.6mpiopenmpipython3.14.____cp314"
+[tasks."build-linux_64_hdf52mpimpichpython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpimpichpython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpimpichpython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpimpichpython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpimpichpython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpimpichpython3.10.____cpython"
+[tasks."build-linux_64_hdf52mpimpichpython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpimpichpython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpimpichpython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpimpichpython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpimpichpython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpimpichpython3.11.____cpython"
+[tasks."build-linux_64_hdf52mpimpichpython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpimpichpython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpimpichpython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpimpichpython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpimpichpython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpimpichpython3.12.____cpython"
+[tasks."build-linux_64_hdf52mpimpichpython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpimpichpython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpimpichpython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpimpichpython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpimpichpython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpimpichpython3.13.____cp313"
+[tasks."build-linux_64_hdf52mpimpichpython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpimpichpython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpimpichpython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpimpichpython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpimpichpython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpimpichpython3.14.____cp314"
+[tasks."build-linux_64_hdf52mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpinompipython3.10.____cpython"
+[tasks."build-linux_64_hdf52mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpinompipython3.11.____cpython"
+[tasks."build-linux_64_hdf52mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpinompipython3.12.____cpython"
+[tasks."build-linux_64_hdf52mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpinompipython3.13.____cp313"
+[tasks."build-linux_64_hdf52mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpinompipython3.14.____cp314"
+[tasks."build-linux_64_hdf52mpiopenmpipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpiopenmpipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpiopenmpipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpiopenmpipython3.10.____cpython"
+[tasks."build-linux_64_hdf52mpiopenmpipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpiopenmpipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpiopenmpipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpiopenmpipython3.11.____cpython"
+[tasks."build-linux_64_hdf52mpiopenmpipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpiopenmpipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpiopenmpipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpiopenmpipython3.12.____cpython"
+[tasks."build-linux_64_hdf52mpiopenmpipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpiopenmpipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpiopenmpipython3.13.____cp313"
+[tasks."build-linux_64_hdf52mpiopenmpipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_64_hdf52mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_64_hdf52mpiopenmpipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_64_hdf52mpiopenmpipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_64_hdf52mpiopenmpipython3.14.____cp314"
+[tasks."build-linux_aarch64_hdf51.14.6mpimpichpython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpimpichpython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpimpichpython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpimpichpython3.10.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpimpichpython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpimpichpython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpimpichpython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpimpichpython3.11.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpimpichpython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpimpichpython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpimpichpython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpimpichpython3.12.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpimpichpython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpimpichpython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpimpichpython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpimpichpython3.13.____cp313"
+[tasks."build-linux_aarch64_hdf51.14.6mpimpichpython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpimpichpython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpimpichpython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpimpichpython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpimpichpython3.14.____cp314"
+[tasks."build-linux_aarch64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpinompipython3.10.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpinompipython3.11.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpinompipython3.12.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpinompipython3.13.____cp313"
+[tasks."build-linux_aarch64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpinompipython3.14.____cp314"
+[tasks."build-linux_aarch64_hdf51.14.6mpiopenmpipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpiopenmpipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpiopenmpipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpiopenmpipython3.10.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpiopenmpipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpiopenmpipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpiopenmpipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpiopenmpipython3.11.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpiopenmpipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpiopenmpipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpiopenmpipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpiopenmpipython3.12.____cpython"
+[tasks."build-linux_aarch64_hdf51.14.6mpiopenmpipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpiopenmpipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpiopenmpipython3.13.____cp313"
+[tasks."build-linux_aarch64_hdf51.14.6mpiopenmpipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf51.14.6mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf51.14.6mpiopenmpipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf51.14.6mpiopenmpipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf51.14.6mpiopenmpipython3.14.____cp314"
+[tasks."build-linux_aarch64_hdf52mpimpichpython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpimpichpython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpimpichpython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpimpichpython3.10.____cpython"
+[tasks."build-linux_aarch64_hdf52mpimpichpython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpimpichpython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpimpichpython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpimpichpython3.11.____cpython"
+[tasks."build-linux_aarch64_hdf52mpimpichpython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpimpichpython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpimpichpython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpimpichpython3.12.____cpython"
+[tasks."build-linux_aarch64_hdf52mpimpichpython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpimpichpython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpimpichpython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpimpichpython3.13.____cp313"
+[tasks."build-linux_aarch64_hdf52mpimpichpython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpimpichpython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpimpichpython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpimpichpython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpimpichpython3.14.____cp314"
+[tasks."build-linux_aarch64_hdf52mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpinompipython3.10.____cpython"
+[tasks."build-linux_aarch64_hdf52mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpinompipython3.11.____cpython"
+[tasks."build-linux_aarch64_hdf52mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpinompipython3.12.____cpython"
+[tasks."build-linux_aarch64_hdf52mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpinompipython3.13.____cp313"
+[tasks."build-linux_aarch64_hdf52mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpinompipython3.14.____cp314"
+[tasks."build-linux_aarch64_hdf52mpiopenmpipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpiopenmpipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpiopenmpipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpiopenmpipython3.10.____cpython"
+[tasks."build-linux_aarch64_hdf52mpiopenmpipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpiopenmpipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpiopenmpipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpiopenmpipython3.11.____cpython"
+[tasks."build-linux_aarch64_hdf52mpiopenmpipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpiopenmpipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpiopenmpipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpiopenmpipython3.12.____cpython"
+[tasks."build-linux_aarch64_hdf52mpiopenmpipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpiopenmpipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpiopenmpipython3.13.____cp313"
+[tasks."build-linux_aarch64_hdf52mpiopenmpipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_aarch64_hdf52mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_aarch64_hdf52mpiopenmpipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_aarch64_hdf52mpiopenmpipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_aarch64_hdf52mpiopenmpipython3.14.____cp314"
+[tasks."build-linux_ppc64le_hdf51.14.6mpimpichpython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpimpichpython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpimpichpython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpimpichpython3.10.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpimpichpython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpimpichpython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpimpichpython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpimpichpython3.11.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpimpichpython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpimpichpython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpimpichpython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpimpichpython3.12.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpimpichpython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpimpichpython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpimpichpython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpimpichpython3.13.____cp313"
+[tasks."build-linux_ppc64le_hdf51.14.6mpimpichpython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpimpichpython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpimpichpython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpimpichpython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpimpichpython3.14.____cp314"
+[tasks."build-linux_ppc64le_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpinompipython3.10.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpinompipython3.11.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpinompipython3.12.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpinompipython3.13.____cp313"
+[tasks."build-linux_ppc64le_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpinompipython3.14.____cp314"
+[tasks."build-linux_ppc64le_hdf51.14.6mpiopenmpipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpiopenmpipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.10.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpiopenmpipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpiopenmpipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.11.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpiopenmpipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpiopenmpipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.12.____cpython"
+[tasks."build-linux_ppc64le_hdf51.14.6mpiopenmpipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpiopenmpipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.13.____cp313"
+[tasks."build-linux_ppc64le_hdf51.14.6mpiopenmpipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf51.14.6mpiopenmpipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf51.14.6mpiopenmpipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf51.14.6mpiopenmpipython3.14.____cp314"
+[tasks."build-linux_ppc64le_hdf52mpimpichpython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpimpichpython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpimpichpython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpimpichpython3.10.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpimpichpython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpimpichpython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpimpichpython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpimpichpython3.11.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpimpichpython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpimpichpython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpimpichpython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpimpichpython3.12.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpimpichpython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpimpichpython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpimpichpython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpimpichpython3.13.____cp313"
+[tasks."build-linux_ppc64le_hdf52mpimpichpython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpimpichpython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpimpichpython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpimpichpython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpimpichpython3.14.____cp314"
+[tasks."build-linux_ppc64le_hdf52mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpinompipython3.10.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpinompipython3.11.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpinompipython3.12.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpinompipython3.13.____cp313"
+[tasks."build-linux_ppc64le_hdf52mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpinompipython3.14.____cp314"
+[tasks."build-linux_ppc64le_hdf52mpiopenmpipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpiopenmpipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpiopenmpipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpiopenmpipython3.10.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpiopenmpipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpiopenmpipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpiopenmpipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpiopenmpipython3.11.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpiopenmpipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpiopenmpipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpiopenmpipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpiopenmpipython3.12.____cpython"
+[tasks."build-linux_ppc64le_hdf52mpiopenmpipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpiopenmpipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpiopenmpipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpiopenmpipython3.13.____cp313"
+[tasks."build-linux_ppc64le_hdf52mpiopenmpipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant linux_ppc64le_hdf52mpiopenmpipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-linux_ppc64le_hdf52mpiopenmpipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/linux_ppc64le_hdf52mpiopenmpipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant linux_ppc64le_hdf52mpiopenmpipython3.14.____cp314"
+[tasks."build-osx_64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf51.14.6mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf51.14.6mpinompipython3.10.____cpython"
+[tasks."build-osx_64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf51.14.6mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf51.14.6mpinompipython3.11.____cpython"
+[tasks."build-osx_64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf51.14.6mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf51.14.6mpinompipython3.12.____cpython"
+[tasks."build-osx_64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf51.14.6mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf51.14.6mpinompipython3.13.____cp313"
+[tasks."build-osx_64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf51.14.6mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf51.14.6mpinompipython3.14.____cp314"
+[tasks."build-osx_64_hdf52mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf52mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf52mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf52mpinompipython3.10.____cpython"
+[tasks."build-osx_64_hdf52mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf52mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf52mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf52mpinompipython3.11.____cpython"
+[tasks."build-osx_64_hdf52mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf52mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf52mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf52mpinompipython3.12.____cpython"
+[tasks."build-osx_64_hdf52mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf52mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf52mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf52mpinompipython3.13.____cp313"
+[tasks."build-osx_64_hdf52mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant osx_64_hdf52mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-osx_64_hdf52mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_64_hdf52mpinompipython3.14.____cp314"
+[tasks."build-osx_arm64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf51.14.6mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf51.14.6mpinompipython3.10.____cpython"
+[tasks."build-osx_arm64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf51.14.6mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf51.14.6mpinompipython3.11.____cpython"
+[tasks."build-osx_arm64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf51.14.6mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf51.14.6mpinompipython3.12.____cpython"
+[tasks."build-osx_arm64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf51.14.6mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf51.14.6mpinompipython3.13.____cp313"
+[tasks."build-osx_arm64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf51.14.6mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf51.14.6mpinompipython3.14.____cp314"
+[tasks."build-osx_arm64_hdf52mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf52mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf52mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf52mpinompipython3.10.____cpython"
+[tasks."build-osx_arm64_hdf52mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf52mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf52mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf52mpinompipython3.11.____cpython"
+[tasks."build-osx_arm64_hdf52mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf52mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf52mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf52mpinompipython3.12.____cpython"
+[tasks."build-osx_arm64_hdf52mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf52mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf52mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf52mpinompipython3.13.____cp313"
+[tasks."build-osx_arm64_hdf52mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant osx_arm64_hdf52mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-osx_arm64_hdf52mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/osx_arm64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant osx_arm64_hdf52mpinompipython3.14.____cp314"
+[tasks."build-win_64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf51.14.6mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-win_64_hdf51.14.6mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf51.14.6mpinompipython3.10.____cpython"
+[tasks."build-win_64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf51.14.6mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-win_64_hdf51.14.6mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf51.14.6mpinompipython3.11.____cpython"
+[tasks."build-win_64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf51.14.6mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-win_64_hdf51.14.6mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf51.14.6mpinompipython3.12.____cpython"
+[tasks."build-win_64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf51.14.6mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-win_64_hdf51.14.6mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf51.14.6mpinompipython3.13.____cp313"
+[tasks."build-win_64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf51.14.6mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-win_64_hdf51.14.6mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf51.14.6mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf51.14.6mpinompipython3.14.____cp314"
+[tasks."build-win_64_hdf52mpinompipython3.10.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf52mpinompipython3.10.____cpython directly (without setup scripts)"
+[tasks."inspect-win_64_hdf52mpinompipython3.10.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf52mpinompipython3.10.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf52mpinompipython3.10.____cpython"
+[tasks."build-win_64_hdf52mpinompipython3.11.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf52mpinompipython3.11.____cpython directly (without setup scripts)"
+[tasks."inspect-win_64_hdf52mpinompipython3.11.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf52mpinompipython3.11.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf52mpinompipython3.11.____cpython"
+[tasks."build-win_64_hdf52mpinompipython3.12.____cpython"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf52mpinompipython3.12.____cpython directly (without setup scripts)"
+[tasks."inspect-win_64_hdf52mpinompipython3.12.____cpython"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf52mpinompipython3.12.____cpython.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf52mpinompipython3.12.____cpython"
+[tasks."build-win_64_hdf52mpinompipython3.13.____cp313"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf52mpinompipython3.13.____cp313 directly (without setup scripts)"
+[tasks."inspect-win_64_hdf52mpinompipython3.13.____cp313"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf52mpinompipython3.13.____cp313.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf52mpinompipython3.13.____cp313"
+[tasks."build-win_64_hdf52mpinompipython3.14.____cp314"]
+cmd = "rattler-build build --recipe recipe -m .ci_support/win_64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "Build libmed-feedstock with variant win_64_hdf52mpinompipython3.14.____cp314 directly (without setup scripts)"
+[tasks."inspect-win_64_hdf52mpinompipython3.14.____cp314"]
+cmd = "inspect_artifacts --recipe-dir recipe -m .ci_support/win_64_hdf52mpinompipython3.14.____cp314.yaml"
+description = "List contents of libmed-feedstock packages built for variant win_64_hdf52mpinompipython3.14.____cp314"
 
 [feature.smithy.dependencies]
 conda-smithy = "*"
