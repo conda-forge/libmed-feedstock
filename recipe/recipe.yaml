@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: libmed
   version: "4.2"
-  build: 27
+  build: 28
   sha256: a0193de4f0fef916ea9b83fb3e69e0717068a6bb41474ea8b6b0dece10b56d13
   mpi_prefix: ${{ mpi }}
 
