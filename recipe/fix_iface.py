@@ -30,7 +30,7 @@ _BIDON_PARAM = re.compile(
 
 def strip_bidon(filepath):
     """Remove bidon parameter declarations from C function signatures."""
-    with open(filepath, "r") as f:
+    with open(filepath, "r", encoding="latin-1") as f:
         content = f.read()
 
     def _replace(m):
@@ -55,7 +55,7 @@ def strip_bidon(filepath):
     new_content = "\n".join(cleaned)
 
     if count:
-        with open(filepath, "w") as f:
+        with open(filepath, "w", encoding="latin-1") as f:
             f.write(new_content)
         print(f"  {filepath}: removed {count} bidon parameter(s)")
 
