@@ -20,7 +20,7 @@ import sys
 
 def process_def_file(def_path):
     """Read a .def file and add lowercase+underscore aliases for exports."""
-    with open(def_path, "r") as f:
+    with open(def_path, "r", encoding="latin-1") as f:
         content = f.read()
     lines = content.splitlines(keepends=True)
 
@@ -62,7 +62,7 @@ def process_def_file(def_path):
                 n_aliases += 1
 
     if n_aliases > 0:
-        with open(def_path, "w") as f:
+        with open(def_path, "w", encoding="latin-1") as f:
             f.writelines(new_lines)
         print(f"  {def_path}: added {n_aliases} aliases")
 
