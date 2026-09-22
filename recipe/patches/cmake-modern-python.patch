@@ -11,7 +11,7 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
 - 
 -  FIND_PACKAGE(PythonInterp REQUIRED)  # to get version string ...
 -  FIND_PACKAGE(PythonLibs REQUIRED)
-+  FIND_PACKAGE(Python COMPONENTS Interpreter Development REQUIRED)
++  FIND_PACKAGE(Python COMPONENTS Interpreter Development.Module REQUIRED)
  ENDIF()
  
  ## Creation of files med_config.h.cmake

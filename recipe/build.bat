@@ -53,7 +53,10 @@ del /Q src\medC.dll src\medfwrap.dll src\med.dll 2>NUL
 ninja
 if errorlevel 1 exit 1
 
-mkdir %SP_DIR%\med
+:: Quoted on purpose: newer rattler-build gives Windows an SP_DIR containing a forward slash,
+:: e.g. PREFIX\Lib/site-packages, and unquoted cmd reads /site-packages as a switch:
+:: "The syntax of the command is incorrect".
+mkdir "%SP_DIR%\med"
 if errorlevel 1 exit 1
 ninja install
 if errorlevel 1 exit 1
